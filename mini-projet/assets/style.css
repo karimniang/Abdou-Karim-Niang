@@ -1,0 +1,99 @@
+body{
+    background-image: url(img-bg.jpg);
+    margin: 0;
+    padding: 0;
+}
+@media screen and (max-width: 768px) {
+    .monbox{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: white;
+        margin-top: 5%;
+        padding-bottom: 20px;
+        background: #f2f8fa;
+    }
+}
+@media screen and (min-width: 768px) {
+    .monbox{
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        background-color: white;
+        margin-top: 5%;
+        padding-bottom: 20px;
+        background: #f2f8fa;
+    }
+}
+
+#form-login {
+    padding: 15px;
+}
+#header {
+    color: white;
+    text-align: center;
+    background-color: black;
+    padding-top: 5px;
+    height: 80px;
+    margin: 0;
+}
+.logo {
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+}
+#form-login  input {
+    font-size: 14px;
+    background: #e7f3f7;
+    border: 1px solid #ddd;
+    margin-bottom: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 95%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#button{
+    border-radius: 5px;
+    background: #87add8;
+    color: white;
+    width: 110px;
+    height: 40px;
+}
+#button2{
+    border-radius: 5px;
+    background: white;
+    color: #72afa0;
+    width: 150px;
+    height: 40px;
+}
+.containe{
+    background-color: #87add8;
+    width: auto;
+    padding : 6px;
+    color: white;
+}
+.icon {
+    width: 24px !important;
+    height: 24px !important;
+}
+.form-control {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.form-control .icon {
+    left: auto;
+    position: absolute;
+    right: 10px;
+    top: 15px; 
+}
+.icon-2 {
+    left: auto;
+    position: absolute;
+    right: 10px;
+    top: 15px; 
+}
