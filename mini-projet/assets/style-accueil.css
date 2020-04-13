@@ -1,0 +1,98 @@
+body {
+    background-image: url(img-bg.jpg);
+    margin: 0;
+    padding: 0;
+}
+#header {
+    color: white;
+    text-align: center;
+    background-color: black;
+    padding-top: 5px;
+    height: 80px;
+    margin: 0;
+}
+.logo {
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+}
+.gauche {
+    width: 30%;
+    margin-left: 0;
+    background-color: #87add8;
+}
+.avatar {
+    position: relative;
+    top: 15px;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.gauche > h6 {
+    position: relative;
+    width: 30%;
+    margin-left: 60px;
+    top: -40px;
+}
+@media screen and (max-width: 768px) {
+    .box{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: white;
+        margin-top: 5%;
+        padding-bottom: 20px;
+        background: #f2f8fa;
+    }
+    .btn {
+        left: auto;
+        position: absolute;
+        right: 5px;
+        top: 190px;
+        background-color: #72afa0;
+    }
+    .admin {
+        right: auto;
+        position: absolute;
+        left: 30px;
+        top: 130px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .box{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        background-color: white;
+        margin-top: 5%;
+        padding-bottom: 20px;
+        background: #f2f8fa;
+    }
+    .btn {
+        left: auto;
+        position: absolute;
+        right: 80px;
+        top: 170px;
+        background-color: #72afa0;
+    }
+    .admin {
+        right: auto;
+        position: absolute;
+        left: 80px;
+        top: 150px;
+    }
+}
+.contain {
+    background-color: #87add8;
+    width: auto;
+    padding : 6px;
+}
+h3 {
+    color: white;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

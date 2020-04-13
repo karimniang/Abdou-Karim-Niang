@@ -1,0 +1,93 @@
+body {
+    background-image: url(img-bg.jpg);
+    margin: 0;
+    padding: 0;
+}
+#header {
+    color: white;
+    text-align: center;
+    background-color: black;
+    padding-top: 5px;
+    height: 80px;
+    margin: 0;
+}
+.logo {
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+}
+@media screen and (max-width: 768px) {
+    .box{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: white;
+        margin-top: 5%;
+        padding-bottom: 20px;
+        background: #f2f8fa;
+    }
+}
+@media screen and (min-width: 768px) {
+    .box{
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        background-color: white;
+        margin-top: 5%;
+        padding-bottom: 20px;
+        background: #f2f8fa;
+    }
+}
+.contain {
+    background-color: #87add8;
+    width: auto;
+    padding : 6px;
+}
+
+@media screen and (max-width: 768px){
+    .btn {
+        left: auto;
+        position: absolute;
+        right: 5px;
+        top: 105px;
+        background-color: #72afa0;
+    }
+    .user {
+        right: auto;
+        position: absolute;
+        left: 30px;
+        top: 180px;
+    }
+    .titre {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-align: center;
+    }
+}
+@media screen and (min-width: 768px){
+    .btn {
+        left: auto;
+        position: absolute;
+        right: 80px;
+        top: 180px;
+        background-color: #72afa0;
+    }
+    .user {
+        right: auto;
+        position: absolute;
+        left: 80px;
+        top: 155px;
+    }
+    .titre {
+        color: white;
+        text-align: center;
+    }
+}
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

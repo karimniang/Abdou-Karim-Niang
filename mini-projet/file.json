@@ -1,0 +1,32 @@
+{
+  "Joueurs": [
+    {
+      "user": "dou",
+      "pwd": "9999",
+      "prenom": "Abdou Karim",
+      "nom": "Niang",
+      "photo": "../assets/user1.jpg"
+    },
+    {
+      "user": "thom",
+      "pwd": "2222",
+      "prenom": "Thomas",
+      "nom": "Ndiaye"
+    }
+  ],
+  "Admin": [
+    {
+      "user": "rimka",
+      "pwd": "5555",
+      "prenom": "Abdou Aziz",
+      "nom": "Nagaro",
+      "photo": "../assets/admin1.jpg"
+    },
+    {
+      "user": "bouba",
+      "pwd": "passer",
+      "prenom": "Boubacar",
+      "nom": "Basse"
+    }
+  ]
+}

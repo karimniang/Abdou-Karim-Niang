@@ -1,0 +1,18 @@
+body {
+    background-image: url(img-bg.jpg);
+    margin: 0;
+    padding: 0;
+}
+#header {
+    color: white;
+    text-align: center;
+    background-color: black;
+    padding-top: 5px;
+    height: 80px;
+    margin: 0;
+}
+.logo {
+    float: left;
+    height: 100%;
+    margin-left: 10px;
+}
