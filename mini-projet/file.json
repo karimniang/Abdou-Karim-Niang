@@ -1,32 +1,33 @@
-{
-  "Joueurs": [
+[
+  
     {
       "user": "dou",
       "pwd": "9999",
       "prenom": "Abdou Karim",
       "nom": "Niang",
-      "photo": "../assets/user1.jpg"
+      "photo": "./assets/user1.jpg",
+      "profil": "user"
     },
     {
       "user": "thom",
       "pwd": "2222",
       "prenom": "Thomas",
-      "nom": "Ndiaye"
-    }
-  ],
-  "Admin": [
+      "nom": "Ndiaye",
+      "profil": "user"
+    },
     {
       "user": "rimka",
       "pwd": "5555",
       "prenom": "Abdou Aziz",
       "nom": "Nagaro",
-      "photo": "../assets/admin1.jpg"
+      "photo": "./assets/admin1.jpg",
+      "profil": "admin"
     },
     {
       "user": "bouba",
       "pwd": "passer",
       "prenom": "Boubacar",
-      "nom": "Basse"
+      "nom": "Basse",
+      "profil": "admin"
     }
-  ]
-}
+]
