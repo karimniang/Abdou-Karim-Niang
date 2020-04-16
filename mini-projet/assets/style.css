@@ -197,6 +197,16 @@ body{
     margin-left: 0;
     background-color: #87add8;
 }
+.droite {
+    width: 65%;
+    background-color: white;
+    margin-left: 400px;
+    position: relative;
+    top: -390px
+}
+.menu {
+    background-color: white;
+}
 .avataradmin {
     position: relative;
     top: 15px;
@@ -228,6 +238,13 @@ body{
         left: 30px;
         top: 130px;
     }
+    #dcn {
+        left: auto;
+        position: absolute;
+        right: 5px;
+        top: 105px;
+        background-color: #72afa0;
+    }
 }
 @media screen and (min-width: 768px) {
     .boxadminn{
@@ -245,6 +262,13 @@ body{
         left: 80px;
         top: 150px;
     }
+    #dcn {
+        left: auto;
+        position: absolute;
+        right: 80px;
+        top: 180px;
+        background-color: #72afa0;
+    }
 }
 .containadmin {
     background-color: #87add8;
@@ -257,4 +281,154 @@ h3 {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+}
+.menu-content {
+    margin-left: 0;
+    width: 100%;
+    height: 50px;
+    padding-top: 15px;
+}
+.a-menu {
+    text-decoration-color: black;
+    margin-left: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+}
+.icon-menu {
+    position: relative;
+    top: 5px;
+    margin-inline-end: 0;
+    margin-left: 190px;
+}
+.icon-menu2 {
+    position: relative;
+    top: 5px;
+    margin-inline-end: 0;
+    margin-left: 210px;
+}
+/*Style liste-questions*/
+.btn-ok {
+    width: 40px;
+    
+    background-color: blueviolet;
+    position: relative;
+    top: -35px;
+}
+.li-titre {
+    text-align: center;
+    padding-top: 5px;
+}
+.nombre {
+    width: 60px;
+    position: relative;
+    margin-left: 260px;
+    top: -35px;
+}
+.contain-require {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+.lister {
+    color: #818181;
+    font-size: 20px;
+    font-weight: bold;
+}
+.web {
+    color: black;
+    font-size: 15px;
+}
+.suivant {
+    background-color: #51bfd0;
+    width: 60px;
+    margin-left: 650px;
+}
+/*style inscription-admin*/
+h4 {
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.gauche-inscrir {
+    width: 40%;
+    margin-left: 15px;
+}
+#inscri-admin {
+    border-radius: 5px;
+    border: 1px solid silver;
+    height: 30px;
+    width: 80%;
+}
+.btn-avatar {
+    background-color: #51bfd0;
+    width: 120px;
+    position: relative;
+    margin-left: 210px;
+    top: -37px;
+}
+.creer-compte {
+    background-color: #51bfd0;
+    width: 120px;
+    margin-left: 75px;
+}
+.droite-inscrir {
+    position: absolute;
+    margin-left: 500px;
+    top: 50px;
+}
+.avatarAdminInscrir {
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+/*style liste-joueur*/
+.titre-joueur {
+    color: #818181;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+}
+.affichage-joueur {
+    border-radius: 5px;
+    border: 1px solid silver;
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*page-inscription*/
+.inscription {
+    width: 80%;
+    height: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: snow;
+    border-radius: 10px;
+}
+#contain-use {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#inscri-joueur {
+    border-radius: 5px;
+    border: 1px solid silver;
+    height: 30px;
+    width: 40%;
+}
+.avatar-inscrir {
+    position: absolute;
+    margin-left: 700px;
+    top: 200px;
+}
+.creer-usercompte {
+    background-color: #51bfd0;
+    width: 120px;
+    margin-left: -250px;
 }

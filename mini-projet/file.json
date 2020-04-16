@@ -5,7 +5,7 @@
       "pwd": "9999",
       "prenom": "Abdou Karim",
       "nom": "Niang",
-      "photo": "./assets/user1.jpg",
+      "photo": "../assets/user1.jpg",
       "profil": "user"
     },
     {
@@ -20,7 +20,7 @@
       "pwd": "5555",
       "prenom": "Abdou Aziz",
       "nom": "Nagaro",
-      "photo": "./assets/admin1.jpg",
+      "photo": "../assets/admin1.jpg",
       "profil": "admin"
     },
     {
