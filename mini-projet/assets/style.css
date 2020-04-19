@@ -281,6 +281,12 @@ body {
 .tab button.active {
   background-color: #ccc;
 }
+.pagine {
+  text-align: center;
+}
+.pagine > a {
+  text-decoration: none;
+}
 /*style-accueil*/
 
 .gauche {
