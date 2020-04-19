@@ -1,434 +1,545 @@
-body{
-    background-image: url(img-bg.jpg);
-    margin: 0;
-    padding: 0;
+body {
+  background-image: url(img-bg.jpg);
+  margin: 0;
+  padding: 0;
 }
 @media screen and (max-width: 768px) {
-    #format {
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        background-color: white;
-        margin-top: 5%;
-        padding-bottom: 20px;
-        background: #f2f8fa;
-    }
+  #format {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: white;
+    margin-top: 5%;
+    padding-bottom: 20px;
+    background: #f2f8fa;
+  }
 }
 @media screen and (min-width: 768px) {
-    #format {
-        margin-left: auto;
-        margin-right: auto;
-        width: 40%;
-        background-color: white;
-        margin-top: 5%;
-        padding-bottom: 20px;
-        background: #f2f8fa;
-    }
+  #format {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    background-color: white;
+    margin-top: 5%;
+    padding-bottom: 20px;
+    background: #f2f8fa;
+  }
 }
 
 #login-forme {
-    padding: 15px;
+  padding: 15px;
 }
 #header {
-    color: white;
-    text-align: center;
-    background-color: black;
-    padding-top: 5px;
-    height: 80px;
-    margin: 0;
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding-top: 5px;
+  height: 80px;
+  margin: 0;
 }
 .logo {
-    float: left;
-    height: 100%;
-    margin-left: 10px;
+  float: left;
+  height: 100%;
+  margin-left: 10px;
 }
 #login-forme input {
-    font-size: 14px;
-    background: #e7f3f7;
-    border: 1px solid #ddd;
-    margin-bottom: 25px;
-    padding: 5px;
-    border-radius: 5px;
-    width: 95%;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  font-size: 14px;
+  background: #e7f3f7;
+  border: 1px solid #ddd;
+  margin-bottom: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 95%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
-#button{
-    border-radius: 5px;
-    background: #87add8;
-    color: white;
-    width: 110px;
-    height: 40px;
-    margin-bottom: 25px;
-    font-size: 15px;
-    font-weight: bold;
+#button {
+  border-radius: 5px;
+  background: #87add8;
+  color: white;
+  width: 110px;
+  height: 40px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  font-weight: bold;
 }
 .inscrir {
-    margin-left: 25px;
-    font-size: 15px;
-    font-weight: bold;
-    color: silver;
-    text-decoration: none;
+  margin-left: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  color: silver;
+  text-decoration: none;
 }
 .error-form {
-    color: red;
-    width: 100%;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding: 5px;
+  color: red;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 5px;
 }
-.containe{
-    background-color: #87add8;
-    width: auto;
-    padding : 6px;
-    color: white;
+.containe {
+  background-color: #87add8;
+  width: auto;
+  padding: 6px;
+  color: white;
 }
 .icon {
-    width: 24px !important;
-    height: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
 }
 .form-control {
-    width: 100%;
-    display: inline-block;
-    position: relative;
+  width: 100%;
+  display: inline-block;
+  position: relative;
 }
 
 .form-control .icon {
-    left: auto;
-    position: absolute;
-    right: 10px;
-    top: 15px; 
+  left: auto;
+  position: absolute;
+  right: 10px;
+  top: 15px;
 }
 .icon-2 {
-    left: auto;
-    position: absolute;
-    right: 10px;
-    top: 15px; 
+  left: auto;
+  position: absolute;
+  right: 10px;
+  top: 15px;
 }
 
 /*Style-jeux*/
 @media screen and (max-width: 768px) {
-    .box{
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        background-color: white;
-        margin-top: 5%;
-        padding-bottom: 20px;
-        background: #f2f8fa;
-    }
+  .box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: white;
+    margin-top: 5%;
+    padding-bottom: 20px;
+    background: #f2f8fa;
+  }
 }
 @media screen and (min-width: 768px) {
-    .box{
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-        background-color: white;
-        margin-top: 5%;
-        padding-bottom: 20px;
-        background: #f2f8fa;
-    }
+  .box {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: white;
+    margin-top: 5%;
+    padding-bottom: 20px;
+    background: #f2f8fa;
+  }
 }
 .contain {
-    background-color: #87add8;
-    width: auto;
-    padding : 6px;
+  background-color: #87add8;
+  width: auto;
+  padding: 6px;
 }
 
-@media screen and (max-width: 768px){
-    .btn {
-        left: auto;
-        position: absolute;
-        right: 5px;
-        top: 105px;
-        background-color: #72afa0;
-        text-decoration: none;
-        color: silver;
-    }
-    .user {
-        right: auto;
-        position: absolute;
-        left: 30px;
-        top: 180px;
-    }
-    .titre {
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        color: white;
-        text-align: center;
-    }
-}
-@media screen and (min-width: 768px){
-    .btn {
-        left: auto;
-        position: absolute;
-        right: 80px;
-        top: 180px;
-        background-color: #72afa0;
-        text-decoration: none;
-        color: silver;
-    }
-    .user {
-        right: auto;
-        position: absolute;
-        left: 80px;
-        top: 155px;
-    }
-    .titre {
-        color: white;
-        text-align: center;
-    }
-}
-.avatar {
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-/*style-accueil*/
-
-.gauche {
-    width: 30%;
-    margin-left: 0;
-    background-color: #87add8;
-}
-.droite {
-    width: 65%;
-    background-color: white;
-    margin-left: 400px;
-    position: relative;
-    top: -390px
-}
-.menu {
-    background-color: white;
-}
-.avataradmin {
-    position: relative;
-    top: 15px;
-    margin-left: 10px;
-    vertical-align: middle;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.gauche > h6 {
-    position: relative;
-    width: 30%;
-    margin-left: 60px;
-    top: -40px;
-}
 @media screen and (max-width: 768px) {
-    .boxadmin {
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        background-color: white;
-        margin-top: 5%;
-        padding-bottom: 20px;
-        background: #f2f8fa;
-    }
-    .admin {
-        right: auto;
-        position: absolute;
-        left: 30px;
-        top: 130px;
-    }
-    #dcn {
-        left: auto;
-        position: absolute;
-        right: 5px;
-        top: 105px;
-        background-color: #72afa0;
-    }
-}
-@media screen and (min-width: 768px) {
-    .boxadminn{
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-        background-color: white;
-        margin-top: 5%;
-        padding-bottom: 20px;
-        background: #f2f8fa;
-    }
-    .admin {
-        right: auto;
-        position: absolute;
-        left: 80px;
-        top: 150px;
-    }
-    #dcn {
-        left: auto;
-        position: absolute;
-        right: 80px;
-        top: 180px;
-        background-color: #72afa0;
-    }
-}
-.containadmin {
-    background-color: #87add8;
-    width: auto;
-    padding : 6px;
-}
-h3 {
-    color: white;
-    text-align: center;
+  .btn {
+    left: auto;
+    position: absolute;
+    right: 5px;
+    top: 105px;
+    background-color: #72afa0;
+    text-decoration: none;
+    color: silver;
+  }
+  .user {
+    right: auto;
+    position: absolute;
+    left: 30px;
+    top: 180px;
+  }
+  .titre {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .btn {
+    left: auto;
+    position: absolute;
+    right: 80px;
+    top: 180px;
+    background-color: #72afa0;
+    text-decoration: none;
+    color: silver;
+  }
+  .user {
+    right: auto;
+    position: absolute;
+    left: 80px;
+    top: 155px;
+  }
+  .titre {
+    color: white;
+    text-align: center;
+  }
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.contain-jeux {
+  background-color: white;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+}
+.question-gauche {
+  width: 60%;
+  margin-left: 5px;
+  border: 1px solid steelblue;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.titre-question {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 95px;
+  background-color: whitesmoke;
+  text-align: center;
+  padding-top: 5px;
+}
+#kaw {
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: bold;
+}
+#point {
+  padding-left: 10px;
+  background-color: whitesmoke;
+  width: 50px;
+  height: 25px;
+  margin-left: 550px;
+}
+.question {
+  margin-left: 250px;
+}
+.webjeux {
+  font-size: 25px;
+  font-weight: bold;
+}
+.btn-pre {
+  background-color: teal;
+  margin-left: 30px;
+  height: 30px;
+}
+.btn-suit {
+  background-color: blueviolet;
+  margin-left: 570px;
+  height: 30px;
+  position: relative;
+  top: -35px;
+}
+.score {
+  width: 30%;
+  position: relative;
+  margin-left: 750px;
+  top: -320px;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 100%;
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  outline-style: none;
+}
+.tab button:hover {
+  background-color: #ddd;
+  color: blueviolet;
+  outline-style: auto;
+}
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 93%;
+  border-left: none;
+  display: none;
+}
+.tab button.active {
+  background-color: #ccc;
+}
+/*style-accueil*/
+
+.gauche {
+  width: 30%;
+  margin-left: 0;
+  background-color: #87add8;
+}
+.droite {
+  width: 65%;
+  background-color: white;
+  margin-left: 400px;
+  position: relative;
+  top: -390px;
+}
+.menu {
+  background-color: white;
+}
+.avataradmin {
+  position: relative;
+  top: 15px;
+  margin-left: 10px;
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.gauche > h6 {
+  position: relative;
+  width: 30%;
+  margin-left: 60px;
+  top: -40px;
+}
+@media screen and (max-width: 768px) {
+  .boxadmin {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    background-color: white;
+    margin-top: 5%;
+    padding-bottom: 20px;
+    background: #f2f8fa;
+  }
+  .admin {
+    right: auto;
+    position: absolute;
+    left: 30px;
+    top: 130px;
+  }
+  #dcn {
+    text-decoration: none;
+    left: auto;
+    position: absolute;
+    right: 5px;
+    top: 105px;
+    background-color: #72afa0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .boxadminn {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    background-color: white;
+    margin-top: 5%;
+    padding-bottom: 20px;
+    background: #f2f8fa;
+  }
+  .admin {
+    right: auto;
+    position: absolute;
+    left: 80px;
+    top: 150px;
+  }
+  #dcn {
+    text-decoration: none;
+    left: auto;
+    position: absolute;
+    right: 80px;
+    top: 180px;
+    background-color: #72afa0;
+  }
+}
+.containadmin {
+  background-color: #87add8;
+  width: auto;
+  padding: 6px;
+}
+h3 {
+  color: white;
+  text-align: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .menu-content {
-    margin-left: 0;
-    width: 100%;
-    height: 50px;
-    padding-top: 15px;
+  margin-left: 0;
+  width: 100%;
+  height: 50px;
+  padding-top: 15px;
 }
 .a-menu {
-    text-decoration-color: black;
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: normal;
-    color: black;
+  text-decoration-color: black;
+  margin-left: 25px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: normal;
+  color: black;
 }
 .icon-menu {
-    position: relative;
-    top: 5px;
-    margin-inline-end: 0;
-    margin-left: 190px;
+  position: relative;
+  top: 5px;
+  margin-inline-end: 0;
+  margin-left: 190px;
 }
 .icon-menu2 {
-    position: relative;
-    top: 5px;
-    margin-inline-end: 0;
-    margin-left: 210px;
+  position: relative;
+  top: 5px;
+  margin-inline-end: 0;
+  margin-left: 210px;
 }
 /*Style liste-questions*/
 .btn-ok {
-    width: 40px;
-    
-    background-color: blueviolet;
-    position: relative;
-    top: -35px;
+  width: 40px;
+
+  background-color: blueviolet;
+  position: relative;
+  top: -35px;
 }
 .li-titre {
-    text-align: center;
-    padding-top: 5px;
+  text-align: center;
+  padding-top: 5px;
 }
 .nombre {
-    width: 60px;
-    position: relative;
-    margin-left: 260px;
-    top: -35px;
+  width: 60px;
+  position: relative;
+  margin-left: 260px;
+  top: -35px;
 }
 .contain-require {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 5px;
-    border: 1px solid silver;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border: 1px solid silver;
 }
 .lister {
-    color: #818181;
-    font-size: 20px;
-    font-weight: bold;
+  color: #818181;
+  font-size: 20px;
+  font-weight: bold;
 }
 .web {
-    color: black;
-    font-size: 15px;
+  color: black;
+  font-size: 15px;
 }
 .suivant {
-    background-color: #51bfd0;
-    width: 60px;
-    margin-left: 650px;
+  background-color: #51bfd0;
+  width: 60px;
+  margin-left: 650px;
 }
 /*style inscription-admin*/
 h4 {
-    padding-top: 5px;
-    padding-right: 10px;
+  padding-top: 5px;
+  padding-right: 10px;
 }
 .gauche-inscrir {
-    width: 40%;
-    margin-left: 15px;
+  width: 40%;
+  margin-left: 15px;
 }
 #inscri-admin {
-    border-radius: 5px;
-    border: 1px solid silver;
-    height: 30px;
-    width: 80%;
+  border-radius: 5px;
+  border: 1px solid silver;
+  height: 30px;
+  width: 80%;
 }
-.btn-avatar {
-    background-color: #51bfd0;
-    width: 120px;
-    position: relative;
-    margin-left: 210px;
-    top: -37px;
+#photo {
+  background-color: #51bfd0;
+  width: 120px;
+  position: relative;
+  margin-left: 210px;
+  top: -37px;
 }
 .creer-compte {
-    background-color: #51bfd0;
-    width: 120px;
-    margin-left: 75px;
+  background-color: #51bfd0;
+  width: 120px;
+  margin-left: 75px;
 }
 .droite-inscrir {
-    position: absolute;
-    margin-left: 500px;
-    top: 50px;
+  position: absolute;
+  margin-left: 500px;
+  top: 50px;
 }
 .avatarAdminInscrir {
-    vertical-align: middle;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 /*style liste-joueur*/
 .titre-joueur {
-    color: #818181;
-    padding-top: 10px;
-    text-align: center;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: bold;
+  color: #818181;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: bold;
 }
 .affichage-joueur {
-    border-radius: 5px;
-    border: 1px solid silver;
-    width: 80%;
-    height: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  border-radius: 5px;
+  border: 1px solid silver;
+  width: 80%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.titre-liste {
+  width: 3%;
+  color: #818181;
+  font-size: 20px;
+  font-weight: bold;
+}
+.nom-contain {
+  text-align: center;
+  color: #818181;
 }
 /*page-inscription*/
 .inscription {
-    width: 80%;
-    height: 540px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: snow;
-    border-radius: 10px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: snow;
+  border-radius: 10px;
 }
 #contain-use {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 #inscri-joueur {
-    border-radius: 5px;
-    border: 1px solid silver;
-    height: 30px;
-    width: 40%;
+  border-radius: 5px;
+  border: 1px solid silver;
+  height: 30px;
+  width: 40%;
 }
 .avatar-inscrir {
-    position: absolute;
-    margin-left: 700px;
-    top: 200px;
+  position: absolute;
+  margin-left: 700px;
+  top: 200px;
 }
 .creer-usercompte {
-    background-color: #51bfd0;
-    width: 120px;
-    margin-left: -250px;
+  background-color: #51bfd0;
+  width: 120px;
+  margin-left: -250px;
+}
+.error-form-img {
+  color: red;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  top: -35px;
+  margin-left: 170px;
 }

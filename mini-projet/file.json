@@ -1,33 +1,79 @@
 [
-  
-    {
-      "user": "dou",
-      "pwd": "9999",
-      "prenom": "Abdou Karim",
-      "nom": "Niang",
-      "photo": "../assets/user1.jpg",
-      "profil": "user"
-    },
-    {
-      "user": "thom",
-      "pwd": "2222",
-      "prenom": "Thomas",
-      "nom": "Ndiaye",
-      "profil": "user"
-    },
-    {
-      "user": "rimka",
-      "pwd": "5555",
-      "prenom": "Abdou Aziz",
-      "nom": "Nagaro",
-      "photo": "../assets/admin1.jpg",
-      "profil": "admin"
-    },
-    {
-      "user": "bouba",
-      "pwd": "passer",
-      "prenom": "Boubacar",
-      "nom": "Basse",
-      "profil": "admin"
-    }
+  {
+    "user": "dou",
+    "pwd": "9999",
+    "prenom": "Abdou Karim",
+    "nom": "NIANG",
+    "photo": "../assets/user1.jpg",
+    "profil": "user",
+    "score": 60
+  },
+  {
+    "user": "thom",
+    "pwd": "2222",
+    "prenom": "Thomas",
+    "nom": "NDIAYE",
+    "profil": "user",
+    "score": 50
+  },
+  {
+    "user": "rimka",
+    "pwd": "5555",
+    "prenom": "Abdou Aziz",
+    "nom": "NAGARO",
+    "photo": "../assets/admin1.jpg",
+    "profil": "admin",
+    "score": 125
+  },
+  {
+    "user": "bouba",
+    "pwd": "passer",
+    "prenom": "Boubacar",
+    "nom": "BASSE",
+    "profil": "admin",
+    "score": 3520
+  },
+  {
+    "user": "dbaba",
+    "pwd": "1234",
+    "prenom": "Baba",
+    "nom": "DIOP",
+    "profil": "user",
+    "score": 250
+  },
+  {
+    "user": "ndiagayarame",
+    "pwd": "passer",
+    "prenom": "Fallou",
+    "nom": "FALL",
+    "profil": "user",
+    "score": 10
+  },
+  {
+    "user": "mon",
+    "pwd": "ll",
+    "prenom": "Papa",
+    "nom": "PAPA",
+    "profil": "admin",
+    "photo": "..\\/assets\\/20200418151234.jpg",
+    "score": 1250
+  },
+  {
+    "user": "kang",
+    "pwd": "pass",
+    "prenom": "Diene",
+    "nom": "BASSE",
+    "profil": "user",
+    "photo": "..\\/assets\\/20200418152036.jpg",
+    "score": 25
+  },
+  {
+    "user": "keyss",
+    "pwd": "123",
+    "prenom": "Keyna",
+    "nom": "SECK",
+    "profil": "admin",
+    "photo": "..\\/assets\\/20200418152306.jpg",
+    "score": 5
+  }
 ]
