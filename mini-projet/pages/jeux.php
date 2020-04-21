@@ -71,10 +71,12 @@
                         return ($a > $b) ? -1 : 1;
                     }
                     usort($array, "sortByScore");
+                    $classe;
                     foreach ($array as $key => $value) {
                         $tab[] = $value;
                     }
                     $_SESSION['tab'] = $tab;
+
                     $nombreDePage = ceil(sizeof($tab) / 5);
                     if (isset($_GET['page'])) {
                         $page = intval($_GET['page']);
@@ -87,6 +89,7 @@
 
                     $min = ($page - 1) * 5;
                     $max = $min + 5;
+
                     ?>
                     <div class="pagine">
                         <?php
@@ -94,8 +97,6 @@
 
                             if ($i == $page) {
                                 echo ' [ ' . $i . ' ] ';
-                            } elseif (isset($_SESSION['tab'][$i])) {
-                                echo ' <a href="jeux.php?page=' . $i . '">' . $i . '</a> ';
                             } else {
                                 echo ' <a href="jeux.php?page=' . $i . '">' . $i . '</a> ';
                             }
@@ -103,7 +104,7 @@
                         echo '</p>';
                         ?>
                     </div>
-                    <table>
+                    <table style="width: 90%">
                         <thead>
                             <tr>
                                 <th>Prenom</th>
@@ -112,14 +113,23 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             <?php
                             for ($i = $min; $i < $max; $i++) {
+                                if ($_SESSION['tab'][$i]->score < 250) {
+                                    $classe = 'dessous1';
+                                } elseif (($_SESSION['tab'][$i]->score >= 250) && ($_SESSION['tab'][$i]->score < 1000)) {
+                                    $classe = 'dessous2';
+                                } else {
+                                    $classe = 'dessous3';
+                                }
                             ?>
                                 <tr>
                                     <?php
-                                    echo '<td>' . $_SESSION['tab'][$i]->nom . '</td>';
-                                    echo '<td>' .  $_SESSION['tab'][$i]->prenom . '</td>';
-                                    echo '<td >' . $_SESSION['tab'][$i]->score . ' pts</td>';
+                                    echo '<td align="center">' . $_SESSION['tab'][$i]->nom . '</td>';
+                                    echo '<td align="center">' .  $_SESSION['tab'][$i]->prenom . '</td>';
+                                    echo '<td align="center">' . $_SESSION['tab'][$i]->score . ' pts <div class=' . $classe . '></div> </td>';
+
                                     ?>
                                 </tr>
                             <?php
@@ -131,6 +141,15 @@
                 <div id="meilleurScore" class="tabcontent">
                     <h2>Meilleur</h2>
                     <p>Mes scores</p>
+                    <table style="width: 90%">
+                        <tr>
+                            <?php
+                            echo '<td align="center">' . $_SESSION['name'] . '</td>';
+                            echo '<td align="center">' .  $_SESSION['lastname'] . '</td>';
+                            echo '<td align="center">' . $_SESSION['score'] . ' pts</td>';
+                            ?>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>

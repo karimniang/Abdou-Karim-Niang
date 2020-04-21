@@ -6,7 +6,7 @@
     "nom": "NIANG",
     "photo": "../assets/user1.jpg",
     "profil": "user",
-    "score": 60
+    "score": 1000
   },
   {
     "user": "thom",
@@ -75,5 +75,14 @@
     "profil": "admin",
     "photo": "..\\/assets\\/20200418152306.jpg",
     "score": 5
+  },
+  {
+    "user": "yamli",
+    "pwd": "repasser",
+    "prenom": "Djily",
+    "nom": "Mbow",
+    "profil": "admin",
+    "photo": "..\\/assets\\/20200418152306.jpg",
+    "score": 750
   }
 ]

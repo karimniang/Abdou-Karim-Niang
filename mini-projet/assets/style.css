@@ -287,6 +287,24 @@ body {
 .pagine > a {
   text-decoration: none;
 }
+.dessous1 {
+  width: 55px;
+  height: 5px;
+  background-color: red;
+  border-radius: 5px;
+}
+.dessous2 {
+  width: 55px;
+  height: 5px;
+  background-color: greenyellow;
+  border-radius: 5px;
+}
+.dessous3 {
+  width: 55px;
+  height: 5px;
+  background-color: blueviolet;
+  border-radius: 5px;
+}
 /*style-accueil*/
 
 .gauche {

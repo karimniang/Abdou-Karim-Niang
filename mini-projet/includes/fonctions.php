@@ -9,6 +9,7 @@ function connexion($log, $pwd)
         if (($log == $value->user) && ($pwd == $value->pwd)) {
             $_SESSION['name'] = $value->prenom;
             $_SESSION['lastname'] = $value->nom;
+            $_SESSION['score'] = $value->score;
             $_SESSION['lastname'] = strtoupper($_SESSION['lastname']);
             $_SESSION['image'] = $value->photo;
             $_SESSION['statut'] = "login";
