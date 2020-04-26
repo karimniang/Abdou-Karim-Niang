@@ -567,3 +567,77 @@ h4 {
   top: -35px;
   margin-left: 170px;
 }
+/*Création de question*/
+.contantt > h2 {
+  color: blueviolet;
+  text-align: center;
+}
+.creer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid blueviolet;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.laquestion {
+  margin-bottom: 10px;
+  color: #818181;
+  font-weight: bold;
+}
+#apparait {
+  margin-bottom: 10px;
+  color: #818181;
+  font-weight: bold;
+}
+#textreponse {
+  display: "";
+}
+#question-button {
+  position: absolute;
+  margin-left: 5px;
+  width: 40px;
+  padding: 0;
+  height: 40px;
+  border-radius: 5px;
+  display: "";
+}
+#lab-1 {
+  width: 70%;
+  height: 100px;
+
+  border-left: none;
+  border-top: none;
+  background: aliceblue;
+}
+#lab-2 {
+  width: 40px;
+  height: 20px;
+  border-left: none;
+  border-top: none;
+  background: aliceblue;
+}
+#lab-3 {
+  width: 50%;
+  height: 40px;
+  color: #818181;
+  border-left: none;
+  border-top: none;
+  background: aliceblue;
+}
+#lab-4 {
+  width: 50%;
+  height: 30px;
+  border-left: none;
+  border-top: none;
+  background: aliceblue;
+}
+#lab {
+  width: 25px;
+}
+.enregistre {
+  background-color: rgb(193, 156, 228);
+  border-radius: 5px;
+  margin-left: 550px;
+}

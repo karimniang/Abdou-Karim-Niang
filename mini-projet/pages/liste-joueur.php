@@ -17,8 +17,38 @@
             return ($a > $b) ? -1 : 1;
         }
         usort($array, "sortByScore");
+        foreach ($array as $key => $value) {
+            $tab[] = $value;
+        }
+        $_SESSION['tab'] = $tab;
+
+        $nombreDePage = ceil(sizeof($tab) / 5);
+        if (isset($_GET['page'])) {
+            $page = intval($_GET['page']);
+            if ($page > $nombreDePage) {
+                $page = $nombreDePage;
+            }
+        } else {
+            $page = 1;
+        }
+
+        $min = ($page - 1) * 5;
+        $max = $min + 5;
 
         ?>
+        <div class="pagine">
+            <?php
+            for ($i = 1; $i <= $nombreDePage; $i++) {
+
+                if ($i == $page) {
+                    echo ' [ ' . $i . ' ] ';
+                } else {
+                    echo ' <a href="accueil.php?lock=joueurs&page=' . $i . '">' . $i . '</a> ';
+                }
+            }
+            echo '</p>';
+            ?>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -29,13 +59,14 @@
             </thead>
             <tbody class="nom-contain">
                 <?php
-                foreach ($array as $key => $value) {
+                for ($i = $min; $i < $max; $i++) {
                 ?>
                     <tr>
                         <?php
-                        echo '<td>' . $value->prenom . '</td>';
-                        echo '<td>' . $value->nom . '</td>';
-                        echo '<td>' . $value->score . ' pts</td>';
+                        echo '<td align="center">' . $_SESSION['tab'][$i]->prenom . '</td>';
+                        echo '<td align="center">' .  $_SESSION['tab'][$i]->nom . '</td>';
+                        echo '<td align="center">' . $_SESSION['tab'][$i]->score . ' pts</td>';
+
                         ?>
                     </tr>
                 <?php

@@ -76,34 +76,7 @@
                         $tab[] = $value;
                     }
                     $_SESSION['tab'] = $tab;
-
-                    $nombreDePage = ceil(sizeof($tab) / 5);
-                    if (isset($_GET['page'])) {
-                        $page = intval($_GET['page']);
-                        if ($page > $nombreDePage) {
-                            $page = $nombreDePage;
-                        }
-                    } else {
-                        $page = 1;
-                    }
-
-                    $min = ($page - 1) * 5;
-                    $max = $min + 5;
-
                     ?>
-                    <div class="pagine">
-                        <?php
-                        for ($i = 1; $i <= $nombreDePage; $i++) {
-
-                            if ($i == $page) {
-                                echo ' [ ' . $i . ' ] ';
-                            } else {
-                                echo ' <a href="jeux.php?page=' . $i . '">' . $i . '</a> ';
-                            }
-                        }
-                        echo '</p>';
-                        ?>
-                    </div>
                     <table style="width: 90%">
                         <thead>
                             <tr>
@@ -115,7 +88,7 @@
                         <tbody>
 
                             <?php
-                            for ($i = $min; $i < $max; $i++) {
+                            for ($i = 0; $i <= 4; $i++) {
                                 if ($_SESSION['tab'][$i]->score < 250) {
                                     $classe = 'dessous1';
                                 } elseif (($_SESSION['tab'][$i]->score >= 250) && ($_SESSION['tab'][$i]->score < 1000)) {
@@ -126,8 +99,8 @@
                             ?>
                                 <tr>
                                     <?php
-                                    echo '<td align="center">' . $_SESSION['tab'][$i]->nom . '</td>';
-                                    echo '<td align="center">' .  $_SESSION['tab'][$i]->prenom . '</td>';
+                                    echo '<td align="center">' . $_SESSION['tab'][$i]->prenom . '</td>';
+                                    echo '<td align="center">' .  $_SESSION['tab'][$i]->nom . '</td>';
                                     echo '<td align="center">' . $_SESSION['tab'][$i]->score . ' pts <div class=' . $classe . '></div> </td>';
 
                                     ?>

@@ -1,0 +1,9 @@
+[
+  {
+    "question": "Quelques r\u00e9gions du Senegal?",
+    "score": "20",
+    "type": "multiple",
+    "bonne-reponse": ["Kolda", "Louga"],
+    "tous-les-reponse": ["Bamako", "Kolda", "Accra", "Louga"]
+  }
+]
