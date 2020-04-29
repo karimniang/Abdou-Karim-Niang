@@ -73,7 +73,9 @@
                     usort($array, "sortByScore");
                     $classe;
                     foreach ($array as $key => $value) {
-                        $tab[] = $value;
+                        if ($value->profil == 'user') {
+                            $tab[] = $value;
+                        }
                     }
                     $_SESSION['tab'] = $tab;
                     ?>

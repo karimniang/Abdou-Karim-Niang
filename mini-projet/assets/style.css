@@ -529,6 +529,21 @@ h4 {
   text-align: center;
   color: #818181;
 }
+.pre-noor {
+  text-decoration: none;
+  background-color: forestgreen;
+  margin-left: 0;
+  height: 30px;
+}
+.sui-noor {
+  text-decoration: none;
+  background-color: blueviolet;
+  margin-left: 600px;
+  height: 30px;
+}
+.pagine a {
+  text-decoration: none;
+}
 /*page-inscription*/
 .inscription {
   width: 80%;

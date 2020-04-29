@@ -3,7 +3,83 @@
     "question": "Quelques r\u00e9gions du Senegal?",
     "score": "20",
     "type": "multiple",
-    "bonne-reponse": ["Kolda", "Louga"],
-    "tous-les-reponse": ["Bamako", "Kolda", "Accra", "Louga"]
+    "bonne": ["Kolda", "Louga"],
+    "autre": ["Bamako", "Accra"]
+  },
+  {
+    "question": "Quelle est la couleur de l'eau ?",
+    "score": "10",
+    "type": "simple",
+    "bonne": ["incolore"],
+    "autre": ["jaune", "bleu"]
+  },
+  {
+    "question": "Qui a tue Napol\u00e9on?",
+    "score": "5",
+    "type": "simple",
+    "bonne": ["lui"],
+    "autre": ["je sais pas", "Eux"]
+  },
+  {
+    "question": "Quelle est la capitale de Mali ?",
+    "score": "5",
+    "type": "simple",
+    "bonne": ["Bamako"],
+    "autre": ["Washington", "Guediawaye"]
+  },
+  {
+    "question": "la date de l'independance du Senegal",
+    "score": "5",
+    "type": "simple",
+    "bonne": ["1960"],
+    "autre": { "0": "1850", "2": "1998" }
+  },
+  {
+    "question": "Quelle est la devise du Senegal ?",
+    "score": "10",
+    "type": "text",
+    "bonne": ["Un peuple, un but, une fois."]
+  },
+  {
+    "question": "En quelle ann\u00e9e est mort Senghor?",
+    "score": "10",
+    "type": "simple",
+    "bonne": ["2001"],
+    "autre": { "0": "1998", "2": "2008" }
+  },
+  {
+    "question": "Que signifie UVS ??",
+    "score": "5",
+    "type": "simple",
+    "bonne": ["Universit\u00e9 Virtuelle du Senegal"],
+    "autre": ["Univers des Valeurs du Senegal", "Union des Voyous du Sahara"]
+  },
+  {
+    "question": "la mort de bininngame",
+    "score": "24",
+    "type": "multiple",
+    "bonne": ["Bon"],
+    "autre": { "0": "faux", "2": "Bon", "3": "faux" }
+  },
+  {
+    "question": "la mort de bininngame",
+    "score": "24",
+    "type": "multiple",
+    "bonne": ["Bon", "Bon"],
+    "autre": { "0": "faux", "3": "faux" }
+  },
+  {
+    "question": "vjdck x",
+    "score": "6",
+    "type": "simple",
+    "bonne": ["hh"],
+    "autre": { "1": "ddd" }
+  },
+  {
+    "question": "pjro vdcs;",
+    "score": "4",
+    "type": "multiple",
+    "bonne": ["cv"],
+    "autre": { "0": "fff", "2": "ffaff" }
   }
 ]
