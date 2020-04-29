@@ -45,13 +45,12 @@
               <p><?php echo $_SESSION['tabQuestion'][$i]->question ?></p>
               <p class="web">
                 <?php
-                foreach ($_SESSION['tabQuestion'][$i]->autre as $key => $value) {
-
-                  echo '<input type="checkbox" name="">' . $value . '<br>';
-                }
-                foreach ($_SESSION['tabQuestion'][$i]->bonne as $key => $value) {
-
-                  echo '<input type="checkbox" name="" checked>' . $value . '<br>';
+                foreach ($_SESSION['tabQuestion'][$i]->tous as $key => $value) {
+                  if (in_array($value, $_SESSION['tabQuestion'][$i]->bonne)) {
+                    echo '<input type="checkbox" name="" checked>' . $value . '<br>';
+                  } else {
+                    echo '<input type="checkbox" name="">' . $value . '<br>';
+                  }
                 }
                 ?>
               </p>
@@ -63,13 +62,12 @@
               <p><?php echo $_SESSION['tabQuestion'][$i]->question ?></p>
               <p class="web">
                 <?php
-                foreach ($_SESSION['tabQuestion'][$i]->autre as $key => $value) {
-
-                  echo '<input type="radio" name="">' . $value . '<br>';
-                }
-                foreach ($_SESSION['tabQuestion'][$i]->bonne as $key => $value) {
-
-                  echo '<input type="radio" name="" checked>' . $value . '<br>';
+                foreach ($_SESSION['tabQuestion'][$i]->tous as $key => $value) {
+                  if (in_array($value, $_SESSION['tabQuestion'][$i]->bonne)) {
+                    echo '<input type="radio" name="" checked>' . $value . '<br>';
+                  } else {
+                    echo '<input type="radio" name="">' . $value . '<br>';
+                  }
                 }
                 ?>
               </p>

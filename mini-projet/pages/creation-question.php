@@ -5,12 +5,12 @@
     <div class="creer">
       <div class="laquestion">
         <label for="question">Questions</label>
-        <input type="text" name="question" error="errori-1" id="lab-1">
+        <input type="text" name="question" value="<?= @$_POST['question'] ?>" error="errori-1" id="lab-1">
         <div class="error-form" id="errori-1"></div>
       </div>
       <div class="laquestion">
         <label for="point">Nbre de Points</label>
-        <input type="number" name="point" error="errori-2" id="lab-2">
+        <input type="number" name="point" value="<?= @$_POST['point'] ?>" error="errori-2" id="lab-2">
         <div class="error-form" id="errori-2"></div>
       </div>
       <div class="laquestion">
@@ -50,66 +50,44 @@ if (isset($_POST['enregistrer'])) {
   $type = $_POST['choice'];
   $bonneReponse = [];
   $tabDesReponses = $_POST['reponse'];
+  if ($type == 'text') {
+    array_push($bonneReponse, $tabDesReponses);
+  } elseif ($type == 'simple') {
+    for ($i = 0; $i < count($tabDesReponses); $i++) {
+      if (!empty($_POST['simplechoix' . $i])) {
+        array_push($bonneReponse, $tabDesReponses[$i]);
+      }
+    }
+  } elseif ($type == 'multiple') {
+    for ($i = 0; $i < count($tabDesReponses); $i++) {
+      if (!empty($_POST['multiplechoix' . $i])) {
+        array_push($bonneReponse, $tabDesReponses[$i]);
+      }
+    }
+  }
+
   if (empty($question)) {
     echo 'Veuillez remplir la question';
   } elseif (empty($nbreDePoint)) {
     echo 'Veuillez donnez le nombre de point';
   } elseif ($nbreDePoint < 1) {
     echo 'Le nombre de point doit etre superieur à 1';
+  } elseif (empty($type)) {
+    echo 'Veuillez choisir le type de réponse';
   } elseif (empty($tabDesReponses)) {
     echo 'Veuillez remplir la(les) réponse(s)';
+  } elseif ($type == 'simple' && sizeof($bonneReponse) > 1) {
+    echo '<p align="center" >Ce type de question ne peut avoir qu\'une seule réponse</p>';
   } else {
-    if ($type == 'text') {
-      array_push($bonneReponse, $tabDesReponses);
-      $dataQuestion = [
-        "question" => $question,
-        "score" => $nbreDePoint,
-        "type" => $type,
-        "bonne" => $bonneReponse
-      ];
-      ajoutquestion($dataQuestion);
-      echo 'Votre Question a été ajouté';
-    } elseif ($type == 'simple') {
-      for ($i = 0; $i < count($tabDesReponses); $i++) {
-        if (!empty($_POST['simplechoix'][$i])) {
-          array_push($bonneReponse, $tabDesReponses[$i]);
-          for ($j = 0; $j < count($bonneReponse); $j++) {
-            if ($tabDesReponses[$i] == $bonneReponse[$j]) {
-              unset($tabDesReponses[$i]);
-              $dataQuestion = [
-                "question" => $question,
-                "score" => $nbreDePoint,
-                "type" => $type,
-                "bonne" => $bonneReponse,
-                "autre" => $tabDesReponses
-              ];
-              ajoutquestion($dataQuestion);
-              echo 'Votre Question a été ajouté';
-            }
-          }
-        }
-      }
-    } elseif ($type == 'multiple') {
-      for ($i = 0; $i < count($tabDesReponses); $i++) {
-        if (!empty($_POST['multiplechoix' . $i])) {
-          array_push($bonneReponse, $tabDesReponses[$i]);
-          for ($j = 0; $j < count($bonneReponse); $j++) {
-            if ($tabDesReponses[$i] == $bonneReponse[$j]) {
-              unset($tabDesReponses[$i]);
-            }
-          }
-          $dataQuestion = [
-            "question" => $question,
-            "score" => $nbreDePoint,
-            "type" => $type,
-            "bonne" => $bonneReponse,
-            "autre" => $tabDesReponses
-          ];
-          ajoutquestion($dataQuestion);
-          echo 'Votre Question a été ajouté';
-        }
-      }
-    }
+    $dataQuestion = [
+      "question" => $question,
+      "score" => $nbreDePoint,
+      "type" => $type,
+      "bonne" => $bonneReponse,
+      "tous" => $tabDesReponses
+    ];
+    ajoutquestion($dataQuestion);
+    echo '<p align="center" >Votre Question a été ajouté</p>';
   }
 }
 ?>
@@ -129,7 +107,7 @@ if (isset($_POST['enregistrer'])) {
         var wrapper = $('#apparait'); //Input field wrapper
         //Once add button is clicked
         $(addButton).click(function() {
-          $(wrapper).append('<br><div><label for="">Réponse </label><input type="text" id="lab-4" name="reponse[]" error="error-' + (counter) + '" /><input type="radio" name="simplechoix[' + (counter) + ']"><button class="remove_button"><img src="../assets/supprimer.png"/></button><div class="error-form" id="error-' + (counter) + '"></div></div>'); //Add field html
+          $(wrapper).append('<br><div><label for="">Réponse </label><input type="text" id="lab-4" name="reponse[]" error="error-' + (counter) + '" /><input type="radio" name="simplechoix' + (counter) + '"><button class="remove_button"><img src="../assets/supprimer.png"/></button><div class="error-form" id="error-' + (counter) + '"></div></div>'); //Add field html
           counter++;
         });
       });

@@ -4,35 +4,35 @@
     "score": "20",
     "type": "multiple",
     "bonne": ["Kolda", "Louga"],
-    "autre": ["Bamako", "Accra"]
+    "tous": ["Bamako", "Kolda", "Accra", "Louga"]
   },
   {
     "question": "Quelle est la couleur de l'eau ?",
     "score": "10",
     "type": "simple",
     "bonne": ["incolore"],
-    "autre": ["jaune", "bleu"]
+    "tous": ["jaune", "incolore", "bleu"]
   },
   {
     "question": "Qui a tue Napol\u00e9on?",
     "score": "5",
     "type": "simple",
     "bonne": ["lui"],
-    "autre": ["je sais pas", "Eux"]
+    "tous": ["je sais pas", "lui", "Eux"]
   },
   {
     "question": "Quelle est la capitale de Mali ?",
     "score": "5",
     "type": "simple",
     "bonne": ["Bamako"],
-    "autre": ["Washington", "Guediawaye"]
+    "tous": ["Washington", "Guediawaye", "Bamako"]
   },
   {
     "question": "la date de l'independance du Senegal",
     "score": "5",
     "type": "simple",
     "bonne": ["1960"],
-    "autre": { "0": "1850", "2": "1998" }
+    "tous": { "0": "1850", "1": "1960", "2": "1998" }
   },
   {
     "question": "Quelle est la devise du Senegal ?",
@@ -45,41 +45,24 @@
     "score": "10",
     "type": "simple",
     "bonne": ["2001"],
-    "autre": { "0": "1998", "2": "2008" }
+    "tous": { "0": "1998", "1": "2001", "2": "2008" }
   },
   {
     "question": "Que signifie UVS ??",
     "score": "5",
     "type": "simple",
     "bonne": ["Universit\u00e9 Virtuelle du Senegal"],
-    "autre": ["Univers des Valeurs du Senegal", "Union des Voyous du Sahara"]
+    "tous": [
+      "Univers des Valeurs du Senegal",
+      "Union des Voyous du Sahara",
+      "Universit\u00e9 Virtuelle du Senegal"
+    ]
   },
   {
-    "question": "la mort de bininngame",
-    "score": "24",
-    "type": "multiple",
-    "bonne": ["Bon"],
-    "autre": { "0": "faux", "2": "Bon", "3": "faux" }
-  },
-  {
-    "question": "la mort de bininngame",
-    "score": "24",
-    "type": "multiple",
-    "bonne": ["Bon", "Bon"],
-    "autre": { "0": "faux", "3": "faux" }
-  },
-  {
-    "question": "vjdck x",
-    "score": "6",
+    "question": "En quelle ann\u00e9e a \u00e9t\u00e9 sign\u00e9 la d\u00e9claration d'ind\u00e9pendance des \u00c9tats-Unis.",
+    "score": "15",
     "type": "simple",
-    "bonne": ["hh"],
-    "autre": { "1": "ddd" }
-  },
-  {
-    "question": "pjro vdcs;",
-    "score": "4",
-    "type": "multiple",
-    "bonne": ["cv"],
-    "autre": { "0": "fff", "2": "ffaff" }
+    "bonne": ["1776"],
+    "tous": ["1896", "1776", "1928"]
   }
 ]
