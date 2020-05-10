@@ -81,7 +81,7 @@ if (isset($_POST['enregistrer'])) {
   } else {
     $dataQuestion = [
       "question" => $question,
-      "score" => $nbreDePoint,
+      'score' => $nbreDePoint,
       "type" => $type,
       "bonne" => $bonneReponse,
       "tous" => $tabDesReponses

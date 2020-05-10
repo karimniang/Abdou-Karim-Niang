@@ -45,6 +45,10 @@
                     <a href="accueil.php?lock=creer-question" class="a-menu"> Créer Questions </a>
                     <img src="../assets/ic-ajout.png" class="icon-menu" alt="">
                 </div>
+                <div class="menu-content">
+                    <a href="accueil.php?lock=dashboard" class="a-menu"> Tableau de Bord </a>
+                    <img src="../assets/images.png" class="icon-dshb" alt="">
+                </div>
             </nav>
         </div>
         <div class="droite">
@@ -58,6 +62,8 @@
                     require_once("./liste-joueur.php");
                 } elseif ($_GET['lock'] === "creer-question") {
                     require_once("./creation-question.php");
+                } elseif ($_GET['lock'] === "dashboard") {
+                    require_once("./dashboard.php");
                 }
             }
             ?>

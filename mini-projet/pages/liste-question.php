@@ -1,10 +1,28 @@
 <div class="contantt">
-  <div class="li-titre">
-    <p>Nbre de questions/jeu</p>
-    <input type="text" name="nombre" class="nombre">
-    <button name="ok" class="btn-ok">OK</button>
-  </div>
   <form action="" method="POST">
+    <div class="li-titre">
+      <p>Nbre de questions/jeu</p>
+      <input type="text" name="nombre" error="error-1" value="<?= @$_SESSION['nombreParJeu'] ?>" class="nombre">
+      <div class="error-form" id="error-1"></div>
+      <button type="submit" name="ok" class="btn-ok">OK</button>
+    </div>
+    <?php
+    if (isset($_POST['ok'])) {
+      $qfile = '../modif.json';
+      $qdata = file_get_contents($qfile);
+      $arraymodif = json_decode($qdata);
+      if (empty($_POST['nombre'])) {
+        echo 'Veuillez entrer le nombre de questions par jeu';
+      } elseif ($_POST['nombre'] < 5) {
+        echo 'le nombre de question par jeu doit être superieur à 5';
+      } else {
+        $arraymodif->nombreParJeu = $_POST['nombre'];
+        $jsondata = json_encode($arraymodif);
+        file_put_contents($qfile, $jsondata);
+        echo 'Vous avez fixé le nombre de question par jeu à ' . $_POST['nombre'];
+      }
+    }
+    ?>
     <div class="contain-require">
       <?php
       $file = '../question.json';
@@ -16,15 +34,15 @@
       $_SESSION['tabQuestion'] = $tabQuestion;
       $pre = 'block';
       $sui = 'block';
-
-      $nombreDePage = ceil(sizeof($tabQuestion) / 5);
+      $elementParPages = 5;
+      $nombreDePage = ceil(sizeof($tabQuestion) / $elementParPages);
       if (!isset($_GET['page'])) {
         $page = 1;
       } else {
         $page = intval($_GET['page']);
       }
-      $min = ($page - 1) * 5;
-      $max = $min + 5;
+      $min = ($page - 1) * $elementParPages;
+      $max = $min + $elementParPages;
       if ($page <= 1) {
         $page = 1;
         $pre = 'none';
@@ -35,6 +53,7 @@
         $max = sizeof($tabQuestion);
         $sui = 'none';
       }
+
       ?>
       <ol class="lister">
         <?php
@@ -88,13 +107,33 @@
         <?php
           }
         }
+
         ?>
       </ol>
     </div><br>
     <div class="pagine">
-      <button class="pre-noor" style="display:<?php echo $pre; ?>"><a href="accueil.php?lock=question&page=<?php echo $page - 1; ?>">Page précédente</a></button>
+      <button type="button" class="pre-noor" style="display:<?php echo $pre; ?>"><a href="accueil.php?lock=question&page=<?php echo $page - 1; ?>">Page précédente</a></button>
 
-      <button class="sui-noor" style="display:<?php echo $sui; ?>"><a href="accueil.php?lock=question&page=<?php echo $page + 1; ?>">Page suivante</a></button>
+      <button type="button" class="sui-noor" style="display:<?php echo $sui; ?>"><a href="accueil.php?lock=question&page=<?php echo $page + 1; ?>">Page suivante</a></button>
     </div>
   </form>
 </div>
+<script>
+  document.getElementById("mon-form").addEventListener("submit", function(e) {
+    const inputs = document.getElementsByTagName("input");
+    var error = false;
+    for (input of inputs) {
+      if (input.hasAttribute("error")) {
+        var idDivError = input.getAttribute("error");
+        if (!input.value) {
+          document.getElementById(idDivError).innerText = "Veuillez remplire le nombre de question par jeu"
+          error = true;
+        }
+      }
+    }
+    if (error) {
+      e.preventDefault();
+      return false;
+    }
+  })
+</script>

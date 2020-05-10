@@ -67,14 +67,14 @@ if (isset($_POST['creer-compte'])) {
         "prenom" => "$prenom",
         "nom" => "$nom",
         "profil" => "admin",
-        "photo" => "$photo"
+        "photo" => "$photo",
+        "score" => 0
       ];
     } else {
       echo 'format incorecte';
     }
   }
 
-  var_dump($arrayAdmin);
   $result = verifierpwd($pwd1, $pwd2);
   if (verification($log) == false) {
     if ($result == "bon") {
