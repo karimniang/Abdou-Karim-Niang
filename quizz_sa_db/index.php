@@ -14,6 +14,7 @@
   </div>
   <div class="contain">
     <?php
+    session_start();
     require_once("./includes/fonctions.php");
 
     if (isset($_GET['link'])) {
@@ -23,6 +24,11 @@
         require_once("./Pages/jeux.php");
       }
     } else {
+      if (isset($_GET['log'])) {
+        unset($_SESSION['users']);
+        session_destroy();
+        header("location:./index.php");
+      }
       require_once("./Pages/login.php");
     }
     ?>

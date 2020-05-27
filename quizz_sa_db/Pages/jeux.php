@@ -1,5 +1,16 @@
 essayon joueur <br>
 <?php
-session_start();
-echo $_SESSION['name'];
+if (!isset($_SESSION['users'])) {
+    header("location:./index.php");
+    exit();
+}
+echo $_SESSION['users']['nom'];
+?>
+<br>
+<a href="./index.php?log"> Deconnexion </a>
+<?php
+if (isset($_GET['log'])) {
+    header("location:./index.php");
+}
+
 ?>

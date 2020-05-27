@@ -2,7 +2,7 @@
 
 function connection($log, $pwd)
 {
-  session_start();
+
   $dbhost = 'localhost:3306';
   $dbuser = 'root';
   $dbpass = '';
@@ -13,8 +13,8 @@ function connection($log, $pwd)
   $row = mysqli_fetch_assoc($player);
 
   if (mysqli_num_rows($player) == 1) {
-    $_SESSION['name'] = $row["nom"];
-    $_SESSION['photo'] = $row["photo"];
+    $_SESSION['users'] = $row;
+    $_SESSION['log'] = "in";
     if ($row["profil"] === "admin") {
       return "admin";
     } else {
