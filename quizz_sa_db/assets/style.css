@@ -1,0 +1,113 @@
+body {
+  background-image: url(bg-body.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-color: #8e8b8b;
+  height: 70px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 20px;
+}
+.contain {
+  padding: 25px;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.gauche {
+  width: 30%;
+  height: 400px;
+  margin-left: 40px;
+  background-color: #8e8b8b;
+  border-radius: 5px;
+  opacity: 0.4;
+}
+.droite {
+  width: 35%;
+  height: 400px;
+  top: 125px;
+  margin-left: 310px;
+  position: absolute;
+  background-color: #8e8b8b;
+  border-radius: 5px;
+  opacity: 0.4;
+}
+#logo {
+  position: absolute;
+  left: 290px;
+  top: 120px;
+  width: 150px;
+  height: 200px;
+}
+.contain > h6 {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  width: 330px;
+  height: 350px;
+  left: 250px;
+  top: 320px;
+}
+.bloc-login {
+  position: absolute;
+  left: 589px;
+  top: 150px;
+  padding-top: 50px;
+  padding-left: 35px;
+}
+.form > label {
+  display: block;
+  color: white;
+  font-size: 15px;
+  font-family: "Lucida Sans Regular";
+}
+.form > input {
+  width: 250px;
+  height: 40px;
+  border-color: black;
+  background: transparent;
+  border-top-style: hidden;
+  border-inline-end: none;
+  border-inline-start: none;
+  margin-bottom: 25px;
+}
+.connect {
+  background: #8e8b8b;
+  border-radius: 5px;
+  color: white;
+  width: 120px;
+  height: 40px;
+  margin-left: 270px;
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.inscri {
+  color: #8e8b8b;
+  margin-left: 580px;
+  text-decoration: none;
+}
+.icon-log {
+  position: absolute;
+  left: 10px;
+  top: 80px;
+  width: 20px !important;
+  height: 20px !important;
+}
+.icon-pwd {
+  position: absolute;
+  left: 10px;
+  top: 200px;
+  width: 20px !important;
+  height: 20px !important;
+}
+.error-form {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+}
