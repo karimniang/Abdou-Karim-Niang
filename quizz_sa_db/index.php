@@ -22,6 +22,8 @@
         require_once("./Pages/accueil.php");
       } elseif ($_GET['link'] == "jeux") {
         require_once("./Pages/jeux.php");
+      } elseif ($_GET['link'] == "inscription") {
+        require_once("./Pages/inscription.php");
       }
     } else {
       if (isset($_GET['log'])) {

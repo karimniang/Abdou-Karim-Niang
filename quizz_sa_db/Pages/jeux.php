@@ -4,7 +4,7 @@ if (!isset($_SESSION['users'])) {
     header("location:./index.php");
     exit();
 }
-echo $_SESSION['users']['nom'];
+echo $_SESSION['users']['prenom'];
 ?>
 <br>
 <a href="./index.php?log"> Deconnexion </a>
