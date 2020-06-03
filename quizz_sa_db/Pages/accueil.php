@@ -27,6 +27,7 @@ if (isset($_GET['lock'])) {
     <div class="accueil">
         <div class="dcn"><a href="./index.php?log"> Deconnexion </a></div>
         <img src="./assets/logoSA.png" alt="" class="icon-tete">
+        <h3>Proposez Vos Questions</h3>
         <div class="menu">
             <img src="<?php echo $_SESSION['users']['photo'] ?>" class="avataradmin" alt="avatar">
             <p><?php echo $_SESSION['users']['nom'] . ' ' . $_SESSION['users']['prenom'] ?></p>

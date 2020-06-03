@@ -1,6 +1,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <div class="contant">
-  <div class="ajoutAdmin"></div>
   <form action="" method="POST" enctype="multipart/form-data" id="my-form">
     <div class="saveAdmin">
       <div>
@@ -28,11 +27,13 @@
         <input type="password" name="pwd2" error="error-5">
         <div class="error-form-admin" id="error-5"></div>
       </div>
+      <input type="file" name="photo" id="photoAdmin" error="error-6">
+      <div class="error-form-img-2" id="error-6"></div>
+      <button name="creer-compte" class="creer-userAdmin">Créer Compte</button>
     </div>
-    <input type="file" name="photo" id="photoAdmin" error="error-6">
-    <div class="error-form-img-2" id="error-6"></div>
-    <button name="creer-compte" class="creer-userAdmin">Créer Compte</button>
-    <img src="./assets/admin1.jpg" id="bash" alt="" class="img-inscri-2">
+    <div class="img-inscri-2">
+      <img src="./assets/admin1.jpg" id="bash" alt="">
+    </div>
   </form>
 </div>
 <?php
@@ -76,51 +77,4 @@ if (isset($_POST['creer-compte'])) {
   }
 }
 ?>
-
-
-
-<script>
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        $('#bash').attr('src', e.target.result);
-      }
-
-      reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
-  }
-
-  $("#photoAdmin").change(function() {
-    readURL(this);
-  });
-
-  const inputs = document.getElementsByTagName("input");
-  for (input of inputs) {
-    input.addEventListener("keyup", function(e) {
-      if (e.target.hasAttribute("error")) {
-        var idDivError = e.target.getAttribute("error");
-        document.getElementById(idDivError).innerText = ""
-      }
-    })
-  }
-
-  document.getElementById("my-form").addEventListener("submit", function(e) {
-    const inputs = document.getElementsByTagName("input");
-    var error = false;
-    for (input of inputs) {
-      if (input.hasAttribute("error")) {
-        var idDivError = input.getAttribute("error");
-        if (!input.value) {
-          document.getElementById(idDivError).innerText = "Veuillez remplire ce champ"
-          error = true;
-        }
-      }
-    }
-    if (error) {
-      e.preventDefault();
-      return false;
-    }
-  })
-</script>
+<script src="./JS/inscription-user.js"></script>

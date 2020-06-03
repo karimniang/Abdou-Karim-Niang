@@ -121,6 +121,11 @@ body {
   background: #8e8b8b;
   border-radius: 10px;
 }
+.accueil > h3 {
+  position: absolute;
+  margin-left: 500px;
+  top: 110px;
+}
 .dcn {
   position: absolute;
   width: 165px;
@@ -264,7 +269,7 @@ body {
   margin-top: 20px;
 }
 .creer-user {
-  background-color: #8e8b8b;
+  background-color: #c4c4c4;
   margin-left: 280px;
   margin-top: 5px;
   width: 100px;
@@ -300,18 +305,7 @@ body {
   margin-right: auto;
   padding-top: 5px;
 }
-.ajoutAdmin {
-  width: 40%;
-  height: 370px;
-  background: rgba(142, 139, 139, 0.4);
-  border-radius: 10px;
-}
 
-.saveAdmin {
-  position: absolute;
-  top: 20px;
-  margin-left: 20px;
-}
 .saveAdmin input {
   display: block;
   width: 220px;
@@ -321,9 +315,6 @@ body {
   border-top-style: hidden;
   border-inline-end: none;
   border-inline-start: none;
-}
-.saveAdmin label {
-  color: white;
 }
 .error-form-admin {
   color: red;
@@ -349,9 +340,6 @@ body {
 }
 .img-inscri-2 {
   position: absolute;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
   top: 80px;
   margin-left: 490px;
 }
@@ -364,4 +352,182 @@ body {
   position: absolute;
   margin-left: 300px;
   top: 325px;
+}
+#bash {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+/* liste joueurs */
+.lister {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 230px;
+}
+.matable2 {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 30px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid black;
+  width: 90%;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 2px;
+  text-align: center;
+}
+#myTable {
+  color: #333;
+  font-size: 0.9em;
+  font-weight: 300;
+  line-height: 30px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid black;
+  width: 90%;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+  border-radius: 2px;
+  text-align: center;
+}
+
+tr:hover:not(th) {
+  background-color: #8e8b8b;
+}
+
+input[type="button"] {
+  transition: all 0.3s;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+input[type="button"]:not(.active) {
+  background-color: transparent;
+}
+
+.active {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+input[type="button"]:hover:not(.active) {
+  background-color: #ddd;
+}
+/*-----------*/
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 97%;
+}
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  outline-style: none;
+}
+.tab button:hover {
+  background-color: #ddd;
+  color: #8e8b8b;
+  outline-style: auto;
+}
+.tabcontent {
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 93%;
+  border-left: none;
+  display: none;
+}
+.tab button.active {
+  background-color: #ccc;
+}
+/*Créer questions*/
+.creation {
+  width: 90%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 360px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.creation > #monp {
+  padding: 0;
+  margin: 2px;
+  text-align: center;
+}
+.Qform > label {
+  text-decoration: underline;
+}
+.question-form {
+  display: block;
+  width: 540px;
+  height: 50px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.input-form {
+  display: block;
+  width: 35px;
+  height: 15px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+#lab-3 {
+  width: 250px;
+  height: 30px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+#question-button {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  padding: 0;
+  border-radius: 5px;
+  display: "";
+}
+#textreponse {
+  display: "";
+}
+#lab-4 {
+  width: 50%;
+  height: 20px;
+}
+.enregistre {
+  background-color: #8e8b8b;
+  border-radius: 5px;
+  position: absolute;
+  top: 350px;
+  margin-left: 700px;
+}
+.error-form-question {
+  color: red;
+  width: 100%;
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.reponsess {
+  position: absolute;
+  top: 135px;
+  margin-left: 240px;
+  text-decoration: underline;
+}
+/*Liste Question*/
+.lister-question {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 330px;
+  border: 1px solid #8e8b8b;
 }

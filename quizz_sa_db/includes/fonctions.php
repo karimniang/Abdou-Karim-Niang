@@ -7,11 +7,12 @@ function connection($log, $pwd)
   $dbuser = 'root';
   $dbpass = '';
   $dbname = 'bd_quizz_sa';
-  $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-  $sql = "select * from users where login ='" . $log . "' AND password ='" . $pwd . "'";
-  $player = mysqli_query($connect, $sql);
-  $row = mysqli_fetch_assoc($player);
-  if (mysqli_num_rows($player) == 1) {
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $sql = "SELECT * FROM users WHERE `login` ='" . $log . "' AND `password` ='" . $pwd . "'";
+  $player = $pdo->query($sql);
+  $player->setFetchMode(PDO::FETCH_ASSOC);
+  $row = $player->fetch();
+  if ($player->rowCount() == 1) {
     $_SESSION['users'] = $row;
     $_SESSION['log'] = "in";
     if ($row["profil"] === "admin") {
@@ -25,7 +26,6 @@ function connection($log, $pwd)
     }
   }
   return "error";
-  mysqli_close($connect);
 }
 
 function verification($log)
@@ -34,16 +34,16 @@ function verification($log)
   $dbuser = 'root';
   $dbpass = '';
   $dbname = 'bd_quizz_sa';
-  $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-  $sql = "select * from users where login='" . $log . "' ";
-  $player = mysqli_query($connect, $sql);
-  $row = mysqli_fetch_assoc($player);
-  if ($player->num_rows >= 1) {
+  $sql = "SELECT * FROM users WHERE `login` ='" . $log . "' ";
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $player = $pdo->query($sql);
+  $player->setFetchMode(PDO::FETCH_ASSOC);
+  $row = $player->fetch();
+  if ($player->rowCount() == 1) {
     return "pareil";
   } else {
     return "pasPareil";
   }
-  mysqli_close($connect);
 }
 
 function verifierpwd($pwd1, $pwd2)
@@ -63,8 +63,90 @@ function ajouter($log, $pwd, $prenom, $nom, $photo, $profil)
   $dbuser = 'root';
   $dbpass = '';
   $dbname = 'bd_quizz_sa';
-  $connect = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-  $sql = "insert into `bd_quizz_sa`.`users` (`id`,`login`, `password`, `nom`, `prenom`, `photo`, `profil`, `statut`, `score`) VALUES ('','" . $log . "', '" . $pwd . "', '" . $prenom . "', '" . $nom . "', '" . $photo . "', '" . $profil . "', 'unblock', '0')";
-  mysqli_query($connect, $sql);
-  mysqli_close($connect);
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $sql = "insert into `bd_quizz_sa`.`users` (`id`,`login`, `password`, `prenom`, `nom`, `photo`, `profil`, `statut`, `score`) VALUES ('','" . $log . "', '" . $pwd . "', '" . $prenom . "', '" . $nom . "', '" . $photo . "', '" . $profil . "', 'unblock', '0')";
+  $pdo->query($sql);
+}
+
+//liste joueur 
+function getDataJoueurUblq()
+{
+  $dbhost = 'localhost';
+  $dbuser = 'root';
+  $dbpass = '';
+  $dbname = 'bd_quizz_sa';
+  $sql = "SELECT id,nom,prenom,score FROM users WHERE statut= 'unblock' ORDER BY score DESC";
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $q = $pdo->query($sql);
+  $data = [];
+  while ($row = $q->fetch()) {
+    $data[] = $row;
+  }
+  return $data;
+}
+
+function getDataJoueurBlq()
+{
+  $dbhost = 'localhost';
+  $dbuser = 'root';
+  $dbpass = '';
+  $dbname = 'bd_quizz_sa';
+  $sql = "SELECT id,nom,prenom,score FROM users WHERE statut= 'block' ORDER BY score DESC";
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $q = $pdo->query($sql);
+  $data = [];
+  while ($row = $q->fetch()) {
+    $data[] = $row;
+  }
+  return $data;
+}
+
+function bloquer($id)
+{
+  $dbhost = 'localhost';
+  $dbuser = 'root';
+  $dbpass = '';
+  $dbname = 'bd_quizz_sa';
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $sql = 'UPDATE bd_quizz_sa.users SET statut = "block" WHERE users.id = "' . $id . '";';
+  $pdo->query($sql);
+}
+
+function debloquer($id)
+{
+  $dbhost = 'localhost';
+  $dbuser = 'root';
+  $dbpass = '';
+  $dbname = 'bd_quizz_sa';
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $sql = 'UPDATE bd_quizz_sa.users SET statut = "unblock" WHERE users.id = "' . $id . '";';
+  $pdo->query($sql);
+}
+
+function ajoutquestion($question, $score, $type, $tous, $bonne)
+{
+  $dbhost = 'localhost';
+  $dbuser = 'root';
+  $dbpass = '';
+  $dbname = 'bd_quizz_sa';
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $sql = "INSERT INTO `bd_quizz_sa`.`questions` (`id`,`question`, `score`, `type`, `tous`, `bonne`) VALUES (null,'" . $question . "', '" . $score . "', '" . $type . "', '" . $tous . "', '" . $bonne . "')";
+  $pdo->query($sql);
+}
+
+function getQuestion()
+{
+  $dbhost = 'localhost';
+  $dbuser = 'root';
+  $dbpass = '';
+  $dbname = 'bd_quizz_sa';
+  $sql = "SELECT * FROM questions";
+  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $q = $pdo->query($sql);
+  $q->setFetchMode(PDO::FETCH_ASSOC);
+  $data = [];
+  while ($row = $q->fetch()) {
+    $data[] = $row;
+  }
+  return $data;
 }
