@@ -1,6 +1,7 @@
 <div class="contant">
   <div class="lister-question">
     <?php
+    require_once("../includes/fonctions.php");
     $dataQuestions = getQuestion();
 
     for ($i = 0; $i < count($dataQuestions); $i++) {

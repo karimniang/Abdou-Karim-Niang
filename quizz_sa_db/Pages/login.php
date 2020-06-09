@@ -14,36 +14,19 @@
       <div class="bloc-login">
         <div class="form">
           <label for="login"> Login </label>
-          <input type="text" name="login" error="error-1">
+          <input type="text" id="log" name="login" error="error-1">
           <div class="error-form" id="error-1"></div>
           <img src="./assets/ic-login.png" alt="" class="icon-log">
         </div><br><br>
         <div class="form">
           <label for="password"> Password </label>
-          <input type="password" name="password" error="error-2">
+          <input type="password" id="pass" name="password" error="error-2">
           <div class="error-form" id="error-2"></div>
           <img src="./assets/icone-password.png" alt="" class="icon-pwd">
         </div>
-        <button type="submit" name="connect" class="connect">Connexion</button>
+        <button type="button" name="connect" id="conne" class="connect">Connexion</button>
       </div>
-      <a href="index.php?link=inscription" class=" inscri">Pas de compte, Inscrivez vous !</a>
+      <a href="./Pages/inscription.php" class="inscri">Pas de compte, Inscrivez vous !</a>
     </form>
   </div>
 </div>
-<?php
-if (isset($_POST['connect'])) {
-  $log = $_POST['login'];
-  $pwd = $_POST['password'];
-  $result = connection($log, $pwd);
-  if ($result == "error") {
-    echo '<p class="echo-error">Vos informations de connexion sont invalide</p>';
-  } elseif ($result == "block") {
-    echo '<p class="echo-error">Vous avez été bloqué par un administrateur !!!</p>';
-  } else {
-    header("location: index.php?link=" . $result);
-  }
-}
-
-?>
-
-<script src="./JS/login_page.js"></script>

@@ -11,41 +11,91 @@ function readURL(input) {
 }
 
 // pour les admins
-$("#photoAdmin").change(function () {
-  readURL(this);
-});
 
 // pour les joueurs
-$("#photo").change(function () {
+$("#file").change(function () {
   readURL(this);
 });
 
-// Validation des champs de saisis
-const inputs = document.getElementsByTagName("input");
-for (input of inputs) {
-  input.addEventListener("keyup", function (e) {
-    if (e.target.hasAttribute("error")) {
-      var idDivError = e.target.getAttribute("error");
-      document.getElementById(idDivError).innerText = "";
-    }
-  });
-}
-
-document.getElementById("my-form").addEventListener("submit", function (e) {
-  const inputs = document.getElementsByTagName("input");
-  var error = false;
-  for (input of inputs) {
-    if (input.hasAttribute("error")) {
-      var idDivError = input.getAttribute("error");
-      if (!input.value) {
-        document.getElementById(idDivError).innerText =
-          "Veuillez remplire ce champ";
-        error = true;
-      }
-    }
-  }
-  if (error) {
-    e.preventDefault();
+$(".creer-user").click(function () {
+  //alert("ok");
+  var profil = $("#profil").val();
+  //alert(profil);
+  var prenom = $("#prenom").val();
+  if (prenom == "") {
+    $("#mess-error").html('<span style="color:red;">Enter Your Name!</span>');
+    $("#prenom").focus();
     return false;
   }
+  var nom = $("#nom").val();
+  if (nom == "") {
+    $("#mess-error").html(
+      '<span style="color:red;">Enter Your Lastname!</span>'
+    );
+    $("#nom").focus();
+    return false;
+  }
+  var login = $("#log").val();
+  if (login == "") {
+    $("#mess-error").html('<span style="color:red;">Enter Your Login!</span>');
+    $("#log").focus();
+    return false;
+  }
+  var pass = $("#pass").val();
+  if (pass == "") {
+    $("#mess-error").html(
+      '<span style="color:red;">Enter Your Password!</span>'
+    );
+    $("#pass").focus();
+    return false;
+  }
+  var pass2 = $("#pass2").val();
+  if (pass2 == "") {
+    $("#mess-error").html(
+      '<span style="color:red;">Confirm  Your Password!</span>'
+    );
+    $("#pass2").focus();
+    return false;
+  }
+
+  $.ajax({
+    type: "POST",
+    url: "./bds/inscrire.php",
+    data:
+      fd +
+      "&prenom=" +
+      prenom +
+      "&nom=" +
+      nom +
+      "&login=" +
+      login +
+      "&password1=" +
+      pass +
+      "&password2=" +
+      pass2 +
+      "&profil=" +
+      profil,
+    contentType: false,
+    processData: false,
+    success: function (response) {
+      console.log(response);
+      if (gy === "ajouter") {
+        $("#mess-error").html(
+          '<span style="color:red;">Vous etes dedans!</span>'
+        );
+      } else if (gy === "different") {
+        $("#mess-error").html(
+          '<span style="color:red;">Vos mdp sont diff!</span>'
+        );
+      } else if (gy === "photo") {
+        $("#mess-error").html(
+          '<span style="color:red;">Probleme Photo!</span>'
+        );
+      } else if (gy === "login") {
+        $("#mess-error").html(
+          '<span style="color:red;">Probleme login!</span>'
+        );
+      }
+    },
+  });
 });

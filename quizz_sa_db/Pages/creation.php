@@ -1,4 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div style="margin: 0; padding: 10px;">
   <form action="" method="POST" id="mon-form">
     <div class="creation">
@@ -30,7 +29,7 @@
           <input type="text" name="reponse" id="lab-4" />
         </div>
       </div>
-      <button type="submit" name="enregistrer" class="enregistre">Enregistrer</button>
+      <button type="button" name="enregistrer" class="enregistre">Enregistrer</button>
     </div>
   </form>
 
