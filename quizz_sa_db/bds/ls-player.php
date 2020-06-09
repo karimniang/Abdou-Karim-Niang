@@ -18,7 +18,7 @@ $allcount = $qo->rowCount();
 
 
 /* Selecting rows */
-$query = "SELECT * FROM users WHERE profil='joueur' ORDER BY score DESC LIMIT " . $rowid . "," . $rowperpage;
+$query = "SELECT * FROM users WHERE profil='joueur' AND statut='unblock' ORDER BY score DESC LIMIT " . $rowid . "," . $rowperpage;
 
 $result = $pdo->query($query);
 

@@ -41,7 +41,7 @@ function getData() {
 /* Create Table */
 function createTablerow(data) {
   var dataLen = data.length;
-  //.log(data);
+  console.log(data);
   $("#myTable tr:not(:first)").remove();
 
   for (var i = 0; i < dataLen; i++) {
@@ -58,28 +58,38 @@ function createTablerow(data) {
       $("#tr_" + i).append("<td>" + nom + "</td>");
       $("#tr_" + i).append("<td>" + score + "</td>");
       $("#tr_" + i).append(
-        "<td><button type='button' class='" +
+        "<td id='btn_bl_" +
           id +
-          "'  id='btnbl" +
-          i +
-          "'>Block</button></td>"
+          "'><button type='button' id='btn'>Block</button></td>"
       );
       $("#tr_" + i).append(
-        "<td><button type='button' class='" +
+        "<td id='btn_sup_" +
           id +
-          "' id='btnsup" +
-          i +
-          "'>Suppr</button></td>"
+          "'><button type='button' id='btn'>Suppr</button></td>"
       );
     }
   }
 }
-var cu = 1;
-$("#btnbl" + cu).click(function () {
-  const id = $(this).attr("class");
-  console.log(id);
+
+$("#bodya").on("click", "#btn", function () {
+  var tab = $(this).parents().attr("id").split("_");
+  var id = tab[2];
+  var type = tab[1];
+  $.ajax({
+    url: "http://localhost/Projet_S.A/quizz_sa_db/bds/updates.php",
+    type: "post",
+    data: { id: id, type: type },
+    success: function (response) {
+      console.log(response);
+      if (response == "bloque") {
+        alert("ce joueur bloque");
+      } else if (response == "supp") {
+        alert("ce joueur supprimer");
+      }
+      //createTablerow(response);
+    },
+  });
 });
-cu++;
 
 //Menu
 function openCity(evt, affiche) {

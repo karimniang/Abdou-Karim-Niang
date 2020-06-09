@@ -78,7 +78,7 @@ $(".creer-user").click(function () {
     contentType: false,
     processData: false,
     success: function (response) {
-      console.log(response);
+      //console.log(response);
       if (gy === "ajouter") {
         $("#mess-error").html(
           '<span style="color:red;">Vous etes dedans!</span>'
