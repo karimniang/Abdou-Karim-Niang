@@ -1,13 +1,8 @@
 <?php
 include('../includes/fonctions.php');
+global $pdo;
 $rowid = 0;
 $rowperpage = 5;
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'bd_quizz_sa';
-
-$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 
 /* Selecting rows */
 $query = "SELECT * FROM users WHERE profil='joueur' ORDER BY score DESC LIMIT " . $rowid . "," . $rowperpage;

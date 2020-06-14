@@ -1,9 +1,5 @@
-<?php
-include("../includes/fonctions.php");
-?>
-
-
 <div class="contain">
+  <input type="hidden" id="isconnect" value="joueur">
   <div class="pat-joueur">
     <button class="dcn-jj">Deconnexion</button>
     <img src="<?php echo $_SESSION['users']['photo']; ?>" alt="" class="img-joueur">

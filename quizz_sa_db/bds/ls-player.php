@@ -1,13 +1,9 @@
 <?php
 include('../includes/fonctions.php');
+global $pdo;
 $rowid = $_POST['rowid'];
 $rowperpage = $_POST['rowperpage'];
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'bd_quizz_sa';
 
-$pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
 
 /* Count total number of rows */
 $query = "SELECT * FROM users WHERE profil='joueur'";

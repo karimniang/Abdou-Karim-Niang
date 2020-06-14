@@ -1,9 +1,15 @@
+$(".dcn-jj").click(function () {
+  if (confirm("Vous allez vous déconnecté")) {
+    window.location.replace("http://localhost/Projet_S.A/quizz_sa_db/");
+  }
+});
+
 $.ajax({
   url: "http://localhost/Projet_S.A/quizz_sa_db/bds/best.php",
   dataType: "JSON",
   success: function (data) {
     var dataLen = data.length;
-    //console.log(data);
+    console.log(data);
     for (var i = 0; i < dataLen; i++) {
       var prenom = data[i]["prenom"];
       var nom = data[i]["nom"];

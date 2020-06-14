@@ -41,7 +41,7 @@ function getData() {
 /* Create Table */
 function createTablerow(data) {
   var dataLen = data.length;
-  console.log(data);
+  //console.log(data);
   $("#myTable tr:not(:first)").remove();
 
   for (var i = 0; i < dataLen; i++) {
@@ -54,9 +54,9 @@ function createTablerow(data) {
       var score = data[i]["score"];
       var id = data[i]["id"];
       $("#bodya").append("<tr id='tr_" + i + "'></tr>");
-      $("#tr_" + i).append("<td>" + prenom + "</td>");
-      $("#tr_" + i).append("<td>" + nom + "</td>");
-      $("#tr_" + i).append("<td>" + score + "</td>");
+      $("#tr_" + i).append("<td class='prenom_" + id + "'>" + prenom + "</td>");
+      $("#tr_" + i).append("<td class='nom_" + id + "' >" + nom + "</td>");
+      $("#tr_" + i).append("<td class='score_" + id + "'>" + score + "</td>");
       $("#tr_" + i).append(
         "<td id='btn_bl_" +
           id +
@@ -70,7 +70,37 @@ function createTablerow(data) {
     }
   }
 }
+//modificaion
+function ediTable(id, value, champ) {
+  $.ajax({
+    method: "POST",
+    url: "http://localhost/Projet_S.A/quizz_sa_db/bds/modification.php",
+    data: { id: id, value: value, champ: champ },
+    success: function (response) {
+      alert(response);
+    },
+  });
+}
 
+$("#bodya")
+  .on("dblclick", "td", function () {
+    clone = $(this).text();
+    console.log(clone);
+    $(this).html("<input type='text' id='change' value='" + clone + "'>");
+  })
+  .on("focusout", "td", function () {
+    var tab = $(this).attr("class").split("_");
+    champ = tab[0];
+    id = tab[1];
+    value = $("#change").val();
+    //console.log(value);
+    if (confirm("Vous allez changé le " + champ + " de ce joueur")) {
+      ediTable(id, value, champ);
+    }
+    getData();
+  });
+
+//bloquer et supprimer
 $("#bodya").on("click", "#btn", function () {
   var tab = $(this).parents().attr("id").split("_");
   var id = tab[2];
@@ -82,9 +112,11 @@ $("#bodya").on("click", "#btn", function () {
     success: function (response) {
       console.log(response);
       if (response == "bloque") {
-        alert("ce joueur bloque");
+        alert("ce joueur a été bloqué");
+        getData();
       } else if (response == "supp") {
-        alert("ce joueur supprimer");
+        alert("ce joueur a été supprimé");
+        getData();
       }
       //createTablerow(response);
     },

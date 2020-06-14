@@ -1,13 +1,28 @@
 <?php
 session_start();
+$dbhost = 'localhost';
+$dbname = 'bd_quizz_sa';
+$dbuser = 'root';
+$dbpass = '';
+
+try {
+  $pdo = new PDO(
+    'mysql:host=' . $dbhost . ';dbname=' . $dbname,
+    $dbuser,
+    $dbpass,
+    array(
+      PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+      PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
+    )
+  );
+} catch (PDOException $e) {
+  die("Une erreur est survenue lors de la connexion à la Base de données !");
+}
+
+//fonctions utiles
 function connection($log, $pwd)
 {
-
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  global $pdo;
   $sql = "SELECT * FROM users WHERE `login` ='" . $log . "' AND `password` ='" . $pwd . "'";
   $player = $pdo->query($sql);
   $player->setFetchMode(PDO::FETCH_ASSOC);
@@ -30,12 +45,8 @@ function connection($log, $pwd)
 
 function verification($log)
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
+  global $pdo;
   $sql = "SELECT * FROM users WHERE `login` ='" . $log . "' ";
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
   $player = $pdo->query($sql);
   $player->setFetchMode(PDO::FETCH_ASSOC);
   $row = $player->fetch();
@@ -59,11 +70,7 @@ function verifierpwd($pwd1, $pwd2)
 
 function ajouter($log, $pwd, $prenom, $nom, $photo, $profil)
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  global $pdo;
   $sql = "insert into `bd_quizz_sa`.`users` (`id`,`login`, `password`, `prenom`, `nom`, `photo`, `profil`, `statut`, `score`) VALUES ('','" . $log . "', '" . $pwd . "', '" . $prenom . "', '" . $nom . "', '" . $photo . "', '" . $profil . "', 'unblock', '0')";
   $pdo->query($sql);
 }
@@ -71,12 +78,8 @@ function ajouter($log, $pwd, $prenom, $nom, $photo, $profil)
 //liste joueur 
 function getDataJoueurUblq()
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
+  global $pdo;
   $sql = "SELECT id,nom,prenom,score FROM users WHERE statut= 'unblock' ORDER BY score DESC";
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
   $q = $pdo->query($sql);
   $data = [];
   while ($row = $q->fetch()) {
@@ -87,12 +90,8 @@ function getDataJoueurUblq()
 
 function getDataJoueurBlq()
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
+  global $pdo;
   $sql = "SELECT id,nom,prenom,score FROM users WHERE statut= 'block' ORDER BY score DESC";
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
   $q = $pdo->query($sql);
   $data = [];
   while ($row = $q->fetch()) {
@@ -103,45 +102,29 @@ function getDataJoueurBlq()
 
 function bloquer($id)
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  global $pdo;
   $sql = 'UPDATE bd_quizz_sa.users SET statut = "block" WHERE users.id = "' . $id . '";';
   $pdo->query($sql);
 }
 
 function debloquer($id)
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  global $pdo;
   $sql = 'UPDATE bd_quizz_sa.users SET statut = "unblock" WHERE users.id = "' . $id . '";';
   $pdo->query($sql);
 }
 
 function ajoutquestion($question, $score, $type, $tous, $bonne)
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  global $pdo;
   $sql = "INSERT INTO `bd_quizz_sa`.`questions` (`id`,`question`, `score`, `type`, `tous`, `bonne`) VALUES (null,'" . $question . "', '" . $score . "', '" . $type . "', '" . $tous . "', '" . $bonne . "')";
   $pdo->query($sql);
 }
 
 function getQuestion()
 {
-  $dbhost = 'localhost';
-  $dbuser = 'root';
-  $dbpass = '';
-  $dbname = 'bd_quizz_sa';
+  global $pdo;
   $sql = "SELECT * FROM questions";
-  $pdo = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
   $q = $pdo->query($sql);
   $q->setFetchMode(PDO::FETCH_ASSOC);
   $data = [];

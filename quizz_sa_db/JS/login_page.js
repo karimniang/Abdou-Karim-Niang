@@ -1,6 +1,5 @@
+const URL_ROOT = "index.php?action";
 $(document).ready(function () {
-  var connect = $("#isconnect").val();
-  //console.log(connect);
   // if (performance.navigation.type == 1) {
   //if (connect === "admin") {
   // $(".cont").load("./Pages/accueil.php");
@@ -8,6 +7,10 @@ $(document).ready(function () {
   //$(".cont").load("./Pages/jeux.php");
   // }
   // }
+  // if (samaload()) {
+  // console.log("reload");
+  ///}
+
   $(".connect").click(function () {
     //alert("ok");
     var login = $("#log").val();
@@ -32,17 +35,7 @@ $(document).ready(function () {
       data: "login=" + login + "&password=" + pass,
       success: function (data) {
         //console.log(data);
-        if (data === "admin") {
-          $(".cont").load("./Pages/accueil.php");
-          $("#mess-error").html(
-            '<input type="hidden" id="isconnect" value="admin">'
-          );
-        } else if (data === "jeux") {
-          $(".cont").load("./Pages/jeux.php");
-          $("#mess-error").html(
-            '<input type="hidden" id="isconnect" value="jeux">'
-          );
-        } else if (data === "invalide") {
+        if (data === "invalide") {
           $("#mess-error").html(
             '<span style="color:red;">Vos infos de connexion sont invalide!</span>'
           );
@@ -50,6 +43,8 @@ $(document).ready(function () {
           $("#mess-error").html(
             '<span style="color:red;">Vous avez été bloqué par un administrateur!</span>'
           );
+        } else {
+          window.location.replace(URL_ROOT + "=" + data);
         }
       },
     });
@@ -68,5 +63,10 @@ function loadContent(page) {
       $(".cont").html(data);
       event.preventDefault();
     },
+  });
+}
+function samaload() {
+  $(window).bind("beforeunload", function () {
+    return "refreshed";
   });
 }

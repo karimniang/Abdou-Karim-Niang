@@ -1,3 +1,7 @@
+:root {
+  --color_1: #8b8b8b;
+  --color_2: #c4c4c4;
+}
 body {
   background-image: url(bg-body.jpg);
   background-repeat: no-repeat;
@@ -6,7 +10,7 @@ body {
   padding: 0;
 }
 .header {
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
   height: 70px;
   text-align: center;
   padding-top: 5px;
@@ -22,7 +26,7 @@ body {
   width: 30%;
   height: 400px;
   margin-left: 110px;
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
   border-radius: 5px;
   opacity: 0.4;
 }
@@ -32,7 +36,7 @@ body {
   top: 125px;
   margin-left: 440px;
   position: absolute;
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
   border-radius: 5px;
   opacity: 0.4;
 }
@@ -77,7 +81,7 @@ body {
   margin-bottom: 5px;
 }
 .connect {
-  background: #8e8b8b;
+  background: var(--color_1);
   border-radius: 5px;
   color: white;
   width: 120px;
@@ -88,7 +92,7 @@ body {
   font-weight: bold;
 }
 .inscri {
-  color: #8e8b8b;
+  color: var(--color_1);
   margin-left: 700px;
   text-decoration: none;
 }
@@ -102,14 +106,9 @@ body {
 .icon-pwd {
   position: absolute;
   left: 10px;
-  top: 200px;
+  top: 185px;
   width: 20px !important;
   height: 20px !important;
-}
-.error-form {
-  color: red;
-  font-size: 16px;
-  font-weight: bold;
 }
 /*style accueil*/
 .accueil {
@@ -118,7 +117,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   margin-top: 28px;
-  background: #8e8b8b;
+  background: var(--color_1);
   border-radius: 10px;
 }
 .accueil > h3 {
@@ -126,18 +125,18 @@ body {
   margin-left: 500px;
   top: 110px;
 }
-.dcn {
+.accueil .dcn {
   position: absolute;
   width: 165px;
   height: 30px;
   left: 1134px;
   top: 103px;
   border-radius: 5px;
-  background: #c4c4c4;
+  background: var(--color_2);
   text-align: center;
   padding-top: 5px;
 }
-.dcn > a {
+.accueil .dcn > a {
   font-size: 20px;
   color: white;
   text-decoration: none;
@@ -151,7 +150,7 @@ body {
       rgba(255, 255, 255, 0.7) 0%,
       rgba(255, 255, 255, 0) 100%
     ),
-    #8e8b8b;
+    var(--color_1);
 }
 .affiche {
   width: 75%;
@@ -307,7 +306,7 @@ body {
   top: 300px;
 }
 .creer-userAdmin {
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
   width: 100px;
   height: 22px;
   position: absolute;
@@ -361,7 +360,7 @@ body {
 }
 
 tr:hover:not(th) {
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
 }
 
 input[type="button"] {
@@ -389,11 +388,11 @@ input[type="button"]:hover:not(.active) {
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
-  background-color: #c4c4c4;
+  background-color: var(--color_2);
   width: 100%;
 }
 .tab button {
-  background-color: #c4c4c4;
+  background-color: var(--color_2);
   border: none;
   outline: none;
   cursor: pointer;
@@ -403,7 +402,7 @@ input[type="button"]:hover:not(.active) {
 }
 .tab button:hover {
   background-color: #ddd;
-  color: #8e8b8b;
+  color: var(--color_1);
   outline-style: auto;
 }
 .tabcontent {
@@ -415,6 +414,9 @@ input[type="button"]:hover:not(.active) {
 }
 .tab button.active {
   background-color: #ccc;
+}
+#change {
+  width: 30%;
 }
 /*Créer questions*/
 .creation {
@@ -465,16 +467,27 @@ input[type="button"]:hover:not(.active) {
 #textreponse {
   display: "";
 }
+#type {
+  margin-left: 80px;
+  text-decoration: underline;
+}
 #lab-4 {
   width: 50%;
   height: 20px;
 }
+#errore {
+  margin-top: 5px;
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 30px;
+}
 .enregistre {
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
   border-radius: 5px;
   position: absolute;
   top: 350px;
-  margin-left: 700px;
+  margin-left: 570px;
 }
 .reponsess {
   position: absolute;
@@ -487,19 +500,19 @@ input[type="button"]:hover:not(.active) {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
-  height: 330px;
-  border: 1px solid #8e8b8b;
+  height: 260px;
+  border: 1px solid var(--color_1);
 }
 /*style Partie jeux*/
 .pat-joueur {
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
   width: 30%;
   margin: 35px;
   height: 500px;
   border-radius: 10px;
 }
 .pat-jeux {
-  background-color: #8e8b8b;
+  background-color: var(--color_1);
   width: 60%;
   height: 350px;
   position: absolute;
@@ -507,10 +520,10 @@ input[type="button"]:hover:not(.active) {
   top: 170px;
   border-radius: 10px;
 }
-.dcn-jj {
+.accueil .dcn-jj {
   width: 150px;
   height: 30px;
-  background-color: #c4c4c4;
+  background-color: var(--color_2);
   border-radius: 5px;
   display: block;
   margin-left: auto;
@@ -532,4 +545,472 @@ input[type="button"]:hover:not(.active) {
   height: 250px;
   background-color: white;
   margin-top: 25px;
+}
+
+/* Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 768px et 450px */
+@media all and (max-width: 768px) and (min-width: 450px) {
+  .gauche {
+    width: 30%;
+    height: 400px;
+    margin: 0;
+    background-color: var(--color_1);
+    border-radius: 5px;
+    opacity: 0.4;
+  }
+  .droite {
+    width: 35%;
+    height: 400px;
+    top: 125px;
+    margin-left: 205px;
+    position: absolute;
+    background-color: var(--color_1);
+    border-radius: 5px;
+    opacity: 0.4;
+  }
+  #logo {
+    position: absolute;
+    left: 70px;
+    top: 120px;
+    width: 150px;
+    height: 200px;
+  }
+  .log-forme > h6 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    width: 140px;
+    height: 450px;
+    left: 90px;
+    top: 270px;
+  }
+  .bloc-login {
+    position: absolute;
+    left: 280px;
+    top: 150px;
+    padding-top: 50px;
+    padding-left: 35px;
+  }
+  .form > input {
+    width: 200px;
+    height: 40px;
+    border-color: black;
+    background: transparent;
+    border-top-style: hidden;
+    border-inline-end: none;
+    border-inline-start: none;
+    margin-bottom: 5px;
+  }
+  .connect {
+    background: var(--color_1);
+    border-radius: 5px;
+    color: white;
+    width: 120px;
+    height: 40px;
+    margin-left: 100px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .inscri {
+    color: var(--color_1);
+    margin-left: 265px;
+    text-decoration: none;
+  }
+  /*style accueil*/
+  .accueil .dcn {
+    position: inherit;
+    width: 165px;
+    height: 30px;
+    border-radius: 5px;
+    background: var(--color_2);
+    margin-left: 523px;
+  }
+  .avataradmin {
+    position: relative;
+    top: 15px;
+    margin-left: 50px;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .icon-menu {
+    position: relative;
+    top: -20px;
+    margin-inline-end: 0;
+    margin-left: 150px;
+  }
+  .icon-menu2 {
+    position: relative;
+    top: -20px;
+    margin-inline-end: 0;
+    margin-left: 150px;
+  }
+  .icon-dshb {
+    position: relative;
+    top: -22px;
+    margin-inline-end: 0;
+    margin-left: 147px;
+    width: 25px;
+  }
+  .accueil > h3 {
+    position: absolute;
+    margin-left: 250px;
+    top: 105px;
+  }
+  .affiche {
+    width: 75%;
+    background-color: white;
+    border-radius: 5px;
+    height: 400px;
+    margin-left: 172px;
+    position: relative;
+    top: -400px;
+  }
+  .img-inscri-2 {
+    position: absolute;
+    top: 60px;
+    margin-left: 250px;
+  }
+  #bash {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+  }
+  .question-form {
+    display: block;
+    width: 400px;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  .enregistre {
+    background-color: var(--color_1);
+    border-radius: 5px;
+    position: absolute;
+    top: 350px;
+    margin-left: 200px;
+  }
+  /*Style-jeux*/
+  .dcn-jj {
+    display: block;
+    margin-left: auto;
+  }
+  .img-joueur {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 35px;
+  }
+  .pat-joueur h6 {
+    margin-left: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+  .scoreya {
+    width: 100%;
+    height: 300px;
+    background-color: white;
+    margin-top: 25px;
+  }
+  .pat-jeux {
+    background-color: var(--color_1);
+    width: 60%;
+    height: 350px;
+    position: absolute;
+    margin-left: 280px;
+    top: 170px;
+    border-radius: 10px;
+  }
+}
+/* Sur les écrans, quand la largeur de la fenêtre fait au maximum 450px*/
+@media screen and (max-width: 450px) {
+  .gauche {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    background-color: var(--color_1);
+    border-radius: 5px;
+    opacity: 0.4;
+    margin: 0;
+  }
+  .droite {
+    width: 80%;
+    height: 200px;
+    top: 230px;
+    margin-left: 0;
+    position: absolute;
+    background-color: var(--color_1);
+    border-radius: 5px;
+    opacity: 0.4;
+  }
+  #logo {
+    position: absolute;
+    left: 70px;
+    top: 130px;
+    width: 85px;
+    height: 90px;
+  }
+  .log-forme > h6 {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    position: absolute;
+    width: 400px;
+    height: 70px;
+    left: 90px;
+    top: 95px;
+  }
+  .bloc-login {
+    position: absolute;
+    left: 90px;
+    top: 185px;
+    padding-left: 35px;
+    margin: 0;
+  }
+  .form > label {
+    display: block;
+    color: white;
+    font-size: 10px;
+    font-family: "Lucida Sans Regular";
+  }
+  .form > input {
+    width: 200px;
+    height: 35px;
+    border-color: black;
+    background: transparent;
+    border-top-style: hidden;
+    border-inline-end: none;
+    border-inline-start: none;
+  }
+  .connect {
+    background: var(--color_1);
+    border-radius: 5px;
+    color: white;
+    width: 120px;
+    height: 40px;
+    margin-left: 160px;
+    margin-top: 7px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .inscri {
+    color: var(--color_1);
+    text-decoration: none;
+    position: relative;
+    top: 185px;
+    left: 180px;
+  }
+  .icon-log {
+    position: absolute;
+    left: 10px;
+    top: 75px;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .icon-pwd {
+    position: absolute;
+    left: 10px;
+    top: 160px;
+    width: 20px !important;
+    height: 20px !important;
+  }
+  #mess-error {
+    position: relative;
+    top: 80px;
+    right: 190px;
+  }
+  /*style accueil*/
+  .contant {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+  }
+  .accueil .dcn {
+    position: inherit;
+    width: 165px;
+    height: 30px;
+    border-radius: 5px;
+    background: var(--color_2);
+    margin-left: 180px;
+  }
+  .accueil > h3 {
+    position: absolute;
+    margin-left: 120px;
+    top: 105px;
+  }
+  .menu {
+    width: 35%;
+    height: 400px;
+    border-radius: 5px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0) 100%
+      ),
+      var(--color_1);
+  }
+  .avataradmin {
+    position: relative;
+    top: 15px;
+    margin-left: 35px;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  .a-menu {
+    text-decoration-color: black;
+    margin-left: 3px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+  }
+  .icon-menu {
+    position: relative;
+    top: -20px;
+    margin-inline-end: 0;
+    margin-left: 120px;
+  }
+  .icon-menu2 {
+    position: relative;
+    top: -20px;
+    margin-inline-end: 0;
+    margin-left: 120px;
+  }
+  .icon-dshb {
+    position: relative;
+    top: -20px;
+    margin-left: 122px;
+    width: 20px;
+  }
+  .affiche {
+    width: 65%;
+    background-color: white;
+    border-radius: 5px;
+    height: 400px;
+    margin-left: 141px;
+    position: relative;
+    top: -400px;
+  }
+  .saveAdmin .input-tt {
+    display: block;
+    width: 150px;
+    height: 25px;
+    border-color: black;
+    background: transparent;
+    border-top-style: hidden;
+    border-inline-end: none;
+    border-inline-start: none;
+  }
+  .photoAdmin {
+    width: 118px;
+    height: 22px;
+    position: absolute;
+    margin-left: auto;
+    top: 270px;
+  }
+  .creer-userAdmin {
+    background-color: var(--color_1);
+    width: 100px;
+    height: 22px;
+    position: absolute;
+    margin-left: auto;
+    top: 330px;
+  }
+  .img-inscri-2 {
+    position: absolute;
+    top: 260px;
+    margin-left: 120px;
+  }
+  #bash {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+  #myTable {
+    color: #333;
+    font-size: 11px;
+    font-weight: 100;
+    line-height: 25px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 2px solid black;
+    width: 70%;
+    margin: 5px auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 2px;
+    text-align: center;
+  }
+  .question-form {
+    display: block;
+    width: 210px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  .input-form {
+    display: block;
+    width: 20px;
+    height: 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  .reponsess {
+    position: absolute;
+    top: 135px;
+    margin-left: 90px;
+    text-decoration: underline;
+  }
+  #lab-3 {
+    width: 120px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  #type {
+    text-decoration: underline;
+  }
+  #question-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 5px;
+    display: "";
+  }
+  .enregistre {
+    background-color: var(--color_1);
+    border-radius: 5px;
+    position: absolute;
+    top: 340px;
+    margin-left: 30px;
+  }
+  /*Style-jeux*/
+  .pat-joueur {
+    background-color: var(--color_1);
+    width: 39%;
+    margin: 35px;
+    height: 500px;
+    border-radius: 10px;
+  }
+  .pat-jeux {
+    background-color: var(--color_1);
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    margin-left: 215px;
+    top: 160px;
+    border-radius: 10px;
+  }
+  .img-joueur {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 35px;
+    margin-top: 5px;
+  }
 }

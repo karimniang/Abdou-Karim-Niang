@@ -1,5 +1,4 @@
 <?php
-include("../includes/fonctions.php");
 $_SESSION['passe'] = $_SESSION['users']['profil'];
 //if (!isset($_SESSION['users'])) {
 //  header("location:./index.php");
@@ -30,9 +29,10 @@ $cla5 = "menu-content";
 <div class="contain">
 
   <div class="accueil">
-    <div class="dcn"><a href=""> Deconnexion </a></div>
+    <input type="hidden" id="isconnect" value="admin">
     <img src="./assets/logoSA.png" alt="" class="icon-tete">
     <h3>Proposez Vos Questions</h3>
+    <button type="button" class="dcn"> Deconnexion </button>
     <div class="menu">
       <img src="<?php echo $_SESSION['users']['photo'] ?>" class="avataradmin" alt="avatar">
       <p><?php echo $_SESSION['users']['nom'] . ' ' . $_SESSION['users']['prenom'] ?></p>
@@ -72,25 +72,21 @@ $cla5 = "menu-content";
 //}
 ?>
 <script>
-  //$(document).ready(function() {
-
-
-
-  //});
+  $('.dcn').click(function() {
+    if (confirm("Vous allez vous déconnecté")) {
+      window.location.replace("http://localhost/Projet_S.A/quizz_sa_db/");
+    }
+  });
 
 
   $('.a-menu').click(function() {
-    loadContent($(this).attr('href'));
-    return false;
-  });
-
-  function loadContent(page) {
     $.ajax({
-      url: page,
+      url: $(this).attr('href'),
       success: function(data) {
         $('.affiche').html(data);
-        event.preventDefault();
+        //event.preventDefault();
       }
     });
-  }
+    return false;
+  });
 </script>

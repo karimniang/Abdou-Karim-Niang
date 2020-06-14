@@ -1,17 +1,15 @@
 <?php
 include('../includes/fonctions.php');
 
-/* Getting file name */
 $filename = $_FILES['file']['name'];
 
 /* Location */
-$location = "./assets/" . $filename;
+$location = "../assets/" . $filename;
 $uploadOk = 1;
 $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
 
-/* Valid Extensions */
+/*Extensions */
 $valid_extensions = array("jpg", "jpeg", "png");
-/* Check file extension */
 if (!in_array(strtolower($imageFileType), $valid_extensions)) {
   $uploadOk = 0;
 }
@@ -39,7 +37,7 @@ $resultat = verifierpwd($pwd1, $pwd2);
 if (verification($log) == "pasPareil") {
   if (!empty($photo)) {
     if ($resultat == "bon") {
-      //ajouter($log, $pwd1, $prenom, $nom, $photo, $profil);
+      ajouter($log, $pwd1, $prenom, $nom, $photo, $profil);
       echo 'ajouter';
     } elseif ($resultat == "pasbon") {
       echo 'different';

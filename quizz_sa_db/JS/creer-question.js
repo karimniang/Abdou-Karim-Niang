@@ -15,13 +15,9 @@ function val() {
       //Once add button is clicked
       $(addButton).click(function () {
         $(wrapper).append(
-          '<div><label for="">Réponse </label><input type="text" id="lab-4" name="reponse[]" error="error-' +
+          '<div><label for="">Réponse </label><input type="text" id="lab-4" name="reponse[]"/><input type="radio" name="simplechoix' +
             counter +
-            '" /><input type="radio" name="simplechoix' +
-            counter +
-            '"><button class="remove_button"><img src="./assets/supprimer.png"/></button><div class="error-form-question" id="error-' +
-            counter +
-            '"></div></div>'
+            '"><button class="remove_button"><img src="./assets/supprimer.png"/></button></div>'
         ); //Add field html
         counter++;
       });
@@ -39,13 +35,9 @@ function val() {
       //Once add button is clicked
       $(addButton).click(function () {
         $(wrapper).append(
-          '<div><label for="">Réponse </label><input type="text" id="lab-4" name="reponse[]" error="error-' +
+          '<div><label for="">Réponse </label><input type="text" id="lab-4" name="reponse[]"/><input type="checkbox" value="on" name="multiplechoix' +
             counter +
-            '" /><input type="checkbox" value="on" name="multiplechoix' +
-            counter +
-            '"><button class="remove_button"><img src="./assets/supprimer.png"/></button><div class="error-form-question" id="error-' +
-            counter +
-            '"></div></div>'
+            '"><button class="remove_button"><img src="./assets/supprimer.png"/></button></div>'
         ); //Add field html
         counter++;
       });
@@ -58,31 +50,44 @@ function val() {
     counter--; //Decrement field counter
   });
 }
-const inputs = document.getElementsByTagName("input");
-for (input of inputs) {
-  input.addEventListener("keyup", function (e) {
-    if (e.target.hasAttribute("error")) {
-      var idDivError = e.target.getAttribute("error");
-      document.getElementById(idDivError).innerText = "";
-    }
-  });
-}
+//question validate !!!
 
-document.getElementById("mon-form").addEventListener("submit", function (e) {
-  const inputs = document.getElementsByTagName("input");
-  var error = false;
-  for (input of inputs) {
-    if (input.hasAttribute("error")) {
-      var idDivError = input.getAttribute("error");
-      if (!input.value) {
-        document.getElementById(idDivError).innerText =
-          "Veuillez remplire ce champ";
-        error = true;
-      }
-    }
-  }
-  if (error) {
-    e.preventDefault();
+$(".enregistre").click(function () {
+  if ($("#errqn").val() == "") {
+    $("#errore").html("Please Enter Your question!");
+    $("#errqn").focus();
     return false;
   }
+  if ($("#errpt").val() == "") {
+    $("#errore").html("Please set the score!");
+    $("#errpt").focus();
+    return false;
+  }
+  let chaine = $("form").serializeArray();
+  console.log(chaine);
+
+  $.ajax({
+    type: "POST",
+    url: "http://localhost/Projet_S.A/quizz_sa_db/bds/creerQuestion.php",
+    data: chaine,
+    success: function (response) {
+      //alert(response);
+      console.log(response);
+      if (response == "superieur") {
+        $("#errore").html("Le nombre de point doit etre superieur à 5!!!");
+      } else if (response == "reponse") {
+        $("#errore").html("Veuillez remplir la(les) réponse(s)!!!");
+      } else if (response == "seule") {
+        $("#errore").html(
+          "Ce type de question ne peut avoir qu'une seule réponse!!!"
+        );
+      } else if (response == "ajouter") {
+        $("#errore").html("Votre question a été ajouté!!!");
+        setTimeout(function () {
+          // Attendre 2 secondes avant de recharger la page(2)
+          location.reload();
+        }, 2000);
+      }
+    },
+  });
 });
